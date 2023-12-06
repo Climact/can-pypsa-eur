@@ -59,6 +59,10 @@ METRIC_MAP = pd.DataFrame([
     ["bld_energy-demand_residential_heating_electricity[TWh]", "HE_res_spa"],
     ["bld_energy-demand_residential_hotwater_electricity[TWh]", 'HE_res_wat'],
     ["ind_energy-demand-by-carrier_electricity[TWh]", "IN_tot"],
+    #Todo :  add for industry
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]","IN_tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]","IN_tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]","IN_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_refineries[TWh]", "SU_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_losses[TWh]", "SU_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_refineries[TWh]", "tot"],
@@ -67,9 +71,10 @@ METRIC_MAP = pd.DataFrame([
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_bld[TWh]", "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_ind[TWh]", "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_tra[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]", "tot"],
+    #Todo : add for industry
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]","tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]","tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]","tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_heat-CHP[TWh]",  "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_heat-only[TWh]", "tot"]
 ], columns=["metric_id", "sector"])
