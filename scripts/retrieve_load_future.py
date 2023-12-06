@@ -53,6 +53,7 @@ METRIC_MAP = pd.DataFrame([
     ["tra_energy-demand_domestic_electricity_BEV_passenger_bus[TWh]", "TR_bus"],
     ["tra_energy-demand_domestic_electricity_PHEV_passenger_bus[TWh]", "TR_bus"],
     ["tra_energy-demand_domestic_electricity_CEV_freight_rail[TWh]", "TR_rail"],
+    ["tra_energy-demand_domestic_electricity_CEV_passenger_rail[TWh]", "TR_rail"],
     ["bld_energy-demand_non-residential_heating_electricity[TWh]", "HE_ter_spa"],
     ["bld_energy-demand_non-residential_hotwater_electricity[TWh]", "HE_ter_wat"],
     ["bld_energy-demand_residential_heating_electricity[TWh]", "HE_res_spa"],
