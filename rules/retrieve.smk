@@ -197,6 +197,22 @@ if config["enable"].get("retrieve_load_future", True):
         script:
             "../scripts/retrieve_load_future.py"
 
+rule retrieve_industry_future:
+    input:
+        scenario_builder="scenario_builder_tool_input.xlsx",
+        load_hourly= RESOURCES + "load.csv"
+		
+    output:
+			y=config["scenario"]["planning_horizons"])
+        expand("data/patex/patex_ind_{y}.csv",
+    log:
+        LOGS + "retrieve_industry_future.log",
+    retries: 5
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/retrieve_industry_future.py"
+
 rule retrieve_ship_raster:
     input:
         HTTP.remote(
