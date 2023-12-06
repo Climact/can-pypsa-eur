@@ -61,10 +61,10 @@ def apply_profiles_tomorrow(load_annual, countries, profiles, heat_map, transpor
         tr_losses = 0.05
         supply = (industry + heat + transport + residual) * tr_losses
 
-        # Future load
-        load_future[c] = industry + heat + transport + supply + residual
-        logger.info(f"Build total load for {c} is {load_future[c].sum() / 1e6:.2f} TWh")
-
+        # Future load        load_future[c] = heat + transport + supply + residual        opts = snakemake.config["scenario"]["sector_opts"][0].split("-")
+        if not ("I" in opts):
+            load_futur[c] += industry
+        logger.info(f"Build total load for {c} is {load_future[c].sum() / 1e6:.2f} TWh")
     return load_future.set_index(snapshots)
 
 
