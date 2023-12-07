@@ -114,7 +114,7 @@ def __safely_to_int(f):
         return int(f) if f.is_integer() else f
 
 
-def load_scenario_builder():
+def load_scenario_builder(path):
     """
     Read scenarios from scenario builder in the same folder.
     This scenario builder should only contain the data to model EU27 as sum.
@@ -122,7 +122,7 @@ def load_scenario_builder():
     :return df_scenarios: Dataframe of scenarios
     :return metrics: List of levers
     """
-    return pd.read_excel(snakemake.input.scenario_builder, sheet_name="Levers", header=[0, 1]).iloc[:, 4:]
+    return pd.read_excel(path, sheet_name="Levers", header=[0, 1]).iloc[:, 4:]
 
 
 def get_eu27_countries():
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 
     # Load configuration
     logging.info("Loading configuration")
-    df_scenarios = load_scenario_builder()
+    df_scenarios = load_scenario_builder(snakemake.input.scenario_builder)
     scenarios_dict = fill_scenario_list(df_scenarios)
 
     # Getting data from API

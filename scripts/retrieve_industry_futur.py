@@ -193,7 +193,7 @@ if __name__ == "__main__":
 
     # Load configuration
     logging.info("Loading configuration")
-    df_scenarios = load_scenario_builder()
+    df_scenarios = load_scenario_builder(snakemake.input.scenario_builder)
     scenarios_dict = fill_scenario_list(df_scenarios)
 
     # Getting data from API
