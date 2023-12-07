@@ -125,15 +125,16 @@ def format_results(results):
     index_nh3 = [str(y) +"_ammonia" for y in years]
     index_elec = [str(y) +"_electricity" for y in years]
     industry = df_results[["region","sector"]+years]
-    countries = get_eu27_countries
+    countries = get_eu27_countries()
     
     
     result = pd.DataFrame([[]*3],index = index_h2+index_nh3+index_elec)
+    shares = {2030: 0, 2035: 0.68, 2040: 1}
     for co in countries:
         df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
         share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
         h2_demand =  df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] - share_e_methanol * df_co.loc["h2_methanol"]
-        nh3_demand = (df_co.loc["nh3_ind"]*5.166e-3 + df_co.loc["nh3_marine"])* [0,0.68,1]
+        nh3_demand = (df_co.loc["nh3_ind"]*5.166e-3 + df_co.loc["nh3_marine"])*shares[years[0]]
         elec_demand = df_co.loc["elec_ind"]
         result.loc[index_h2,co] = h2_demand.values
         result.loc[index_nh3, co] = nh3_demand.values
