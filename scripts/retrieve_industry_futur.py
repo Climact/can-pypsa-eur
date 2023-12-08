@@ -134,7 +134,7 @@ def format_results(results):
         df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
         share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
         h2_demand =  df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] - share_e_methanol * df_co.loc["h2_methanol"]
-        nh3_demand = (df_co.loc["nh3_ind"]*5.166e-3 + df_co.loc["nh3_marine"])*shares.loc[years]
+        nh3_demand = df_co.loc["nh3_ind"]*5.166e-3 + (df_co.loc["nh3_marine"])*shares.loc[years]
         elec_demand = df_co.loc["elec_ind"]
         result.loc[index_h2,co] = h2_demand.values
         result.loc[index_nh3, co] = nh3_demand.values
