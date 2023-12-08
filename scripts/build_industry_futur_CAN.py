@@ -31,11 +31,13 @@ if __name__ == "__main__":
     for carrier in ["hydrogen","ammonia","electricity"]:
         for country in industry.index.str[:2].unique():
             ca_co = industry.loc[new_demand.filter(like=country,axis=0).index,carrier]
-            weights = 0
             if abs(ca_co.sum())>1e-6:
+                weights = (ca_co/ca_co.sum()).fillna(0)
+            else:
+                ca_co = industry.loc[new_demand.filter(like=country,axis=0).index,'electricity']
                 weights = (ca_co/ca_co.sum()).fillna(0)
             
             patex_co = patex.loc[patex.filter(like=country,axis=0).index,carrier].values
             new_demand.loc[new_demand.filter(like=country,axis=0).index,carrier] = weights*patex_co
-            
+        logging.info(f"Carrier {carrier} amounts to {sum(new_demand[carrier])} [TWh]")
     new_demand.to_csv(snakemake.output["new_demand"])
