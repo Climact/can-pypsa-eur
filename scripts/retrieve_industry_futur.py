@@ -120,7 +120,7 @@ def format_results(results):
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
     
-    years = snakemake.wildcards.planning_horizons
+    years = snakemake.config["scenario"]["planning_horizons"]
     index_h2 = [str(y) +"_hydrogen" for y in years]
     index_nh3 = [str(y) +"_ammonia" for y in years]
     index_elec = [str(y) +"_electricity" for y in years]
@@ -174,7 +174,7 @@ def write_files(df_results):
     df_results.index = df_results.index.set_names("year")
 
     path = Path(snakemake.output[0]).parent
-    for y in snakemake.wildcards.planning_horizons:
+    for y in snakemake.config["scenario"]["planning_horizons"]:
         try:
             df_to_write = df_results.filter(like=str(y),axis=0)
             df_to_write.index = df_to_write.index.str.replace(f"{y}_","")
