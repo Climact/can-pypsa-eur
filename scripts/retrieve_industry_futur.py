@@ -35,12 +35,10 @@ from pathlib import Path
 import pandas as pd
 
 from _helpers import configure_logging
-from retrieve_load_futur import (load_scenario_builder,
-                                 get_eu27_countries,
-                                 fill_scenario_list,
-                                 get_results)
-
-
+from retrieve_load_futur import fill_scenario_list
+from retrieve_load_futur import get_eu27_countries
+from retrieve_load_futur import get_results
+from retrieve_load_futur import load_scenario_builder
 
 # ToDo Move this to yaml configuration
 URL_TO_USE = "prod url"
@@ -48,13 +46,13 @@ URL_TO_USE = "prod url"
 
 METRIC_MAP = pd.DataFrame([
     ["clm_CO2-need-by-way-of-prod_CCU_elc_e-methanol[MtCO2e]", "methanol"],
-    ["clm_CO2-need-by-way-of-prod_CCU_elc_fischer-tropsch[MtCO2e]","fischer_tropsch"],
-    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-sector_hydrogen[TWh]","h2_sectors"],
-    ["ind_energy-demand-by-carrier-feedstock-group_hydrogen_feedstock_chemicals-group[TWh]","h2_ind_nh3"],
-    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]","h2_efuels"],
-    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]","h2_methanol"],
-    ["ind_material-production-by-material_chemical-ammonia[kt]","nh3_ind"],
-    ["tra_energy-demand-bunkers-by-type_bunkers-marine[TWh]","nh3_marine"],
+    ["clm_CO2-need-by-way-of-prod_CCU_elc_fischer-tropsch[MtCO2e]", "fischer_tropsch"],
+    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-sector_hydrogen[TWh]", "h2_sectors"],
+    ["ind_energy-demand-by-carrier-feedstock-group_hydrogen_feedstock_chemicals-group[TWh]", "h2_ind_nh3"],
+    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]", "h2_efuels"],
+    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]", "h2_methanol"],
+    ["ind_material-production-by-material_chemical-ammonia[kt]", "nh3_ind"],
+    ["tra_energy-demand-bunkers-by-type_bunkers-marine[TWh]", "nh3_marine"],
     ["ind_energy-demand-by-carrier_electricity[TWh]", "elec_ind"],
 ], columns=["metric_id", "sector"])
 
@@ -79,6 +77,7 @@ API = {
 }
 
 RX_SCENARIO = re.compile("^\[([A-z]+)\]\s(.*)$")
+
 
 def format_results(results):
     """
@@ -116,27 +115,27 @@ def format_results(results):
     )
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
-    
+
     years = snakemake.config["scenario"]["planning_horizons"]
-    index_h2 = [str(y) +"_hydrogen" for y in years]
-    index_nh3 = [str(y) +"_ammonia" for y in years]
-    index_elec = [str(y) +"_electricity" for y in years]
-    industry = df_results[["region","sector"]+years]
+    index_h2 = [str(y) + "_hydrogen" for y in years]
+    index_nh3 = [str(y) + "_ammonia" for y in years]
+    index_elec = [str(y) + "_electricity" for y in years]
+    industry = df_results[["region", "sector"] + years]
     countries = get_eu27_countries()
-    
-    
-    result = pd.DataFrame([[]*3],index = index_h2+index_nh3+index_elec)
-    shares = pd.Series([0.  , 0.68, 1.  ],index=years)
+
+    result = pd.DataFrame([[] * 3], index=index_h2 + index_nh3 + index_elec)
+    shares = pd.Series([0., 0.68, 1.], index=years)
     for co in countries:
         df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
         share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
-        h2_demand =  df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] - share_e_methanol * df_co.loc["h2_methanol"]
-        nh3_demand = df_co.loc["nh3_ind"]*5.166e-3 + (df_co.loc["nh3_marine"])*shares.loc[years]
+        h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] - share_e_methanol * \
+                    df_co.loc["h2_methanol"]
+        nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + (df_co.loc["nh3_marine"]) * shares.loc[years]
         elec_demand = df_co.loc["elec_ind"]
-        result.loc[index_h2,co] = h2_demand.values
+        result.loc[index_h2, co] = h2_demand.values
         result.loc[index_nh3, co] = nh3_demand.values
         result.loc[index_elec, co] = elec_demand.values
-    
+
     df_results = result
     df_results.columns = df_results.columns.str.replace("EL", "GR")
 
@@ -153,13 +152,13 @@ def format_results(results):
     dict_non_MS = {k: v for k, v in dict_non_MS.items() if not any(df_results.columns.str.startswith(k))}
     historical_load_h = pd.read_csv(snakemake.input.load_hourly, index_col="utc_timestamp", parse_dates=True)
     missing_load = []
-    
+
     for non_MS, MS in dict_non_MS.items():
-        df = df_results.loc[:,df_results.columns.str.startswith(MS)]
+        df = df_results.loc[:, df_results.columns.str.startswith(MS)]
         df *= historical_load_h[non_MS].sum() / historical_load_h[MS].sum()
         df.columns = df.columns.str.replace(MS, non_MS)
         missing_load.append(df)
-    df_results = pd.concat([df_results] + missing_load,axis=1)
+    df_results = pd.concat([df_results] + missing_load, axis=1)
 
     return df_results
 
@@ -173,8 +172,8 @@ def write_files(df_results):
     path = Path(snakemake.output[0]).parent
     for y in snakemake.config["scenario"]["planning_horizons"]:
         try:
-            df_to_write = df_results.filter(like=str(y),axis=0)
-            df_to_write.index = df_to_write.index.str.replace(f"{y}_","")
+            df_to_write = df_results.filter(like=str(y), axis=0)
+            df_to_write.index = df_to_write.index.str.replace(f"{y}_", "")
             df_to_write.to_csv(Path(path, f"patex_ind_{y}.csv"))
         except OSError:
             os.makedirs(path)
