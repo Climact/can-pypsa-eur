@@ -27,18 +27,15 @@ scenarios.
 - ``data/patex`` Yearly electric load per-country.
 """
 
-import json
 import logging
 import os
 import re
 from pathlib import Path
 
 import pandas as pd
-import requests
 
 from _helpers import configure_logging
-from retrieve_load_futur import (__safely_to_int,
-                                 load_scenario_builder,
+from retrieve_load_futur import (load_scenario_builder,
                                  get_eu27_countries,
                                  fill_scenario_list,
                                  get_results)
