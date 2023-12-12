@@ -201,10 +201,8 @@ rule retrieve_industry_future:
     input:
         scenario_builder="scenario_builder_tool_input.xlsx",
         load_hourly= RESOURCES + "load.csv"
-		
     output:
-			y=config["scenario"]["planning_horizons"])
-        expand("data/patex/patex_ind_{y}.csv",
+        expand("data/patex/patex_ind_{y}.csv", y=config["scenario"]["planning_horizons"])
     log:
         LOGS + "retrieve_industry_future.log",
     retries: 5
