@@ -252,6 +252,16 @@ def add_CCL_constraints(n, config):
 
     minimum = xr.DataArray(agg_p_nom_minmax["min"].dropna()).rename(dim_0="group")
     index = minimum.indexes["group"].intersection(lhs.indexes["group"])
+    max_pot = n.generators[['bus','carrier','p_nom_max']]
+    max_pot.bus = max_pot.bus.apply(lambda x : x[:2])
+    max_pot.rename(columns={'bus':'country'},inplace=True)
+    max_pot = max_pot.groupby(['country','carrier']).sum()
+    diff = pd.concat([max_pot.loc[index], minimum.loc[index].to_dataframe()['min']],axis=1)
+    diff = diff.loc[diff['p_nom_max'] < diff['min']]
+    if len(diff)>0:
+        logger.error(f"Max potential lower than minimum for {diff.index.values}")
+        logger.error(f"{diff}")
+        logger.error(f"Solver might not be able to solve the system")
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) >= minimum.loc[index], name="agg_p_nom_min"
@@ -259,6 +269,16 @@ def add_CCL_constraints(n, config):
 
     maximum = xr.DataArray(agg_p_nom_minmax["max"].dropna()).rename(dim_0="group")
     index = maximum.indexes["group"].intersection(lhs.indexes["group"])
+    min_pot = n.generators[['bus','carrier','p_nom_min']]
+    min_pot.bus = min_pot.bus.apply(lambda x : x[:2])
+    min_pot.rename(columns={'bus':'country'},inplace=True)
+    min_pot = min_pot.groupby(['country','carrier']).sum()
+    diff = pd.concat([min_pot.loc[index], maximum.loc[index].to_dataframe()['max']],axis=1)
+    diff = diff.loc[diff['p_nom_min'] > diff['max']]
+    if len(diff)>0:
+        logger.error(f"Min potential higher than maximum for {diff.index.values}")
+        logger.error(f"{diff}")
+        logger.error(f"Solver might not be able to solve the system")
     if not index.empty:
         n.model.add_constraints(
             lhs.sel(group=index) <= maximum.loc[index], name="agg_p_nom_max"
