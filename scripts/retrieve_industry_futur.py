@@ -4,9 +4,14 @@
 # SPDX-License-Identifier: MIT
 
 """
-This rule downloads yearly electric load data for each european country from the `2050 Pathways Explorer <https://pathwaysexplorer.climact.com>`_.
-This rule downloads appropriate years using configuration file. Yearly electric load data are defined by per-country
-scenarios.
+This rule downloads yearly industrial load data for each european country from the
+`2050 Pathways Explorer <https://pathwaysexplorer.climact.com>`_. This rule consider as industrial load: electricity,
+ammonia and hydrogen. This rule downloads appropriate years using configuration file. Yearly load data are defined
+by per-country scenarios.
+
+In the 2050 Pathways Explorer, ammonia for shipping is not modeled. The energy demand for ammonia is replaced by a
+demand in methanol. To overcome this limitation in PyPSA (where ammonia is well modeled), we shift the demand for H2
+used for methanol in ammonia demand. PyPSA will then choose the best way to produce this ammonia.
 
 **Releveant Settings**
 
@@ -24,7 +29,7 @@ scenarios.
 
 **Outputs**
 
-- ``data/patex`` Yearly electric load per-country.
+- ``data/patex_ind`` Yearly industrial load per-country.
 """
 
 import logging
@@ -50,7 +55,6 @@ METRIC_MAP = pd.DataFrame([
     ["elc_energy-demand-by-direct-use-and-energy-carrier_for-sector_hydrogen[TWh]", "h2_sectors"],
     ["ind_energy-demand-by-carrier-feedstock-group_hydrogen_feedstock_chemicals-group[TWh]", "h2_ind_nh3"],
     ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]", "h2_efuels"],
-    ["elc_energy-demand-by-direct-use-and-energy-carrier_for-power-prod_hydrogen[TWh]", "h2_methanol"],
     ["ind_material-production-by-material_chemical-ammonia[kt]", "nh3_ind"],
     ["tra_energy-demand-bunkers-by-type_bunkers-marine[TWh]", "nh3_marine"],
     ["ind_energy-demand-by-carrier_electricity[TWh]", "elec_ind"],
@@ -128,8 +132,7 @@ def format_results(results):
     for co in countries:
         df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
         share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
-        h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] - share_e_methanol * \
-                    df_co.loc["h2_methanol"]
+        h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] * (1 - share_e_methanol)
         nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + (df_co.loc["nh3_marine"]) * shares.loc[years]
         elec_demand = df_co.loc["elec_ind"]
         result.loc[index_h2, co] = h2_demand.values
