@@ -421,17 +421,20 @@ sector:
   shipping_hydrogen_share:
     2020: 0
     2030: 0
+    2035: 0
     2040: 0
     2050: 0
   shipping_methanol_share:
     2020: 0
-    2030: 0.3
-    2040: 0.7
+    2030: 0
+    2035: 0.68
+    2040: 1
     2050: 1
   shipping_oil_share:
     2020: 1
-    2030: 0.7
-    2040: 0.3
+    2030: 1
+    2035: 0.32
+    2040: 0
     2050: 0
   shipping_methanol_efficiency: 0.46 # 10-15% higher https://www.iea-amf.org/app/webroot/files/file/Annex%20Reports/AMF_Annex_56.pdf, https://users.ugent.be/~lsileghe/documents/extended_abstract.pdf
   shipping_oil_efficiency: 0.40 #For conversion of fuel oil to propulsion in 2011
