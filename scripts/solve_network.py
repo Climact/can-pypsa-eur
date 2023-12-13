@@ -605,7 +605,8 @@ def extra_functionality(n, snapshots):
         add_BAU_constraints(n, config)
     if "SAFE" in opts and n.generators.p_nom_extendable.any():
         add_SAFE_constraints(n, config)
-    if "CCL" in opts and n.generators.p_nom_extendable.any():
+    if ("CCL" in opts and n.generators.p_nom_extendable.any() and
+        snakemake.wildcards.planning_horizons == str(snakemake.config["scenario"]["planning_horizons"][0])):
         add_CCL_constraints(n, config)
     reserve = config["electricity"].get("operational_reserve", {})
     if reserve.get("activate"):
