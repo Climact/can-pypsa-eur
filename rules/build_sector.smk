@@ -664,20 +664,20 @@ rule build_transport_demand:
         "../scripts/build_transport_demand.py"
 
 rule build_industry_futur_CAN:
-	input:
-		industry_demand=RESOURCES + 
-		"industrial_energy_demand_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
-		patex_industry="data/patex/patex_ind_{planning_horizons}.csv",
-	output:
-		new_demand=RESOURCES + "industrial_energy_demand_CAN_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
-	resources:
-		mem_mb=2000,
-	log:
-		LOGS + "build_industry_CAN_s{simpl}_{clusters}_{planning_horizons}.log",
-	conda:
-		"../envs/environment.yaml"
-	script:
-		"../scripts/build_industry_futur_CAN.py"
+    input:
+        industry_demand=RESOURCES +
+                        "industrial_energy_demand_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
+        patex_industry="data/patex/patex_ind_{planning_horizons}.csv",
+    output:
+        new_demand=RESOURCES + "industrial_energy_demand_CAN_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
+    resources:
+        mem_mb=2000,
+    log:
+        LOGS + "build_industry_CAN_s{simpl}_{clusters}_{planning_horizons}.log",
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/build_industry_futur_CAN.py"
 
 rule prepare_sector_network:
     params:
