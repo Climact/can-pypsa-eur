@@ -219,7 +219,15 @@ def get_results(scenarios_dict, variables_list):
     return results
 
 
-def format_request(results, metric_map):
+def format_results(results, horizons, metric_map, load_hourly):
+    """
+    Format received JSON into dataframe
+    Change unit from TWh to MWh (* 1e6)
+    Add non-MS data using proportions
+
+    :param results: data in JSON format
+    :return df_results: data in dataframe
+    """
     df_results = []
     for (master_region, scenario), values in results.items():
         values = values['outputs']['0']
@@ -245,27 +253,11 @@ def format_request(results, metric_map):
         .join(metric_map.set_index("metric_id"))
         .set_index("sector").reset_index()
     )
-    return df_results
-
-
-def format_results(results):
-    """
-    Format received JSON into dataframe
-    Change unit from TWh to MWh (* 1e6)
-    Add non-MS data using proportions
-
-    :param results: data in JSON format
-    :return df_results: data in dataframe
-    """
-    df_results = format_request(results, METRIC_MAP)
 
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
     df_results["key"] = df_results["region"] + "_" + df_results["sector"]
     df_results = df_results.set_index("key")
-
-    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
-               snakemake.config["scenario"]["planning_horizons"]
 
     df_results = df_results[horizons] * 1e6
     df_results.index = df_results.index.str.replace("EL", "GR")
@@ -281,7 +273,7 @@ def format_results(results):
                    "RS": "HU",
                    "ME": "GR"}
     dict_non_MS = {k: v for k, v in dict_non_MS.items() if not any(df_results.index.str.startswith(k))}
-    historical_load_h = pd.read_csv(snakemake.input.load_hourly, index_col="utc_timestamp", parse_dates=True)
+    historical_load_h = pd.read_csv(load_hourly, index_col="utc_timestamp", parse_dates=True)
     missing_load = []
     for non_MS, MS in dict_non_MS.items():
         df = df_results[df_results.index.str.startswith(MS)]
@@ -293,20 +285,20 @@ def format_results(results):
     return df_results
 
 
-def write_files(df_results):
+def write_files(df_results, output, filename):
     """
     Export of data
     """
     df_results = df_results.T
     df_results.index = df_results.index.set_names("year")
 
-    path = Path(snakemake.output[0]).parent
+    path = Path(output[0]).parent
     for y in df_results.index:
         try:
-            df_results.loc[[y]].to_csv(Path(path, f"patex_{y}.csv"))
+            df_results.loc[[y]].to_csv(Path(path, f"{filename}{y}.csv"))
         except OSError:
             os.makedirs(path)
-            df_results.loc[[y]].to_csv(Path(path, f"patex_{y}.csv"))
+            df_results.loc[[y]].to_csv(Path(path, f"{filename}{y}.csv"))
 
 
 if __name__ == "__main__":
@@ -328,8 +320,10 @@ if __name__ == "__main__":
 
     # Formatting data
     logging.info("Formatting data")
-    df_results = format_results(results)
+    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
+               snakemake.config["scenario"]["planning_horizons"]
+    df_results = format_results(results, horizons, METRIC_MAP, snakemake.input.load_hourly)
 
     # Writing data
     logging.info("Writing data")
-    write_files(df_results)
+    write_files(df_results, snakemake.output, "patex_")

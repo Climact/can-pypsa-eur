@@ -34,17 +34,15 @@ This rule mainly reuse definitions from ``retrieve_load_futur``.
 """
 
 import logging
-import os
-from pathlib import Path
 
 import pandas as pd
 
 from _helpers import configure_logging
 from retrieve_load_futur import fill_scenario_list
-from retrieve_load_futur import format_request
-from retrieve_load_futur import get_eu27_countries
+from retrieve_load_futur import format_results
 from retrieve_load_futur import get_results
 from retrieve_load_futur import load_scenario_builder
+from retrieve_load_futur import write_files
 
 METRIC_MAP = pd.DataFrame([
     ["clm_CO2-need-by-way-of-prod_CCU_elc_e-methanol[MtCO2e]", "methanol"],
@@ -56,93 +54,6 @@ METRIC_MAP = pd.DataFrame([
     ["tra_energy-demand-bunkers-by-type_bunkers-marine[TWh]", "nh3_marine"],
     ["ind_energy-demand-by-carrier_electricity[TWh]", "elec_ind"],
 ], columns=["metric_id", "sector"])
-
-
-def format_results(results):
-    """
-    Format received JSON into dataframe
-    Change unit from TWh to MWh (* 1e6)
-    Add non-MS data using proportions
-
-    :param results: data in JSON format
-    :return df_results: data in dataframe
-    """
-    df_results = format_request(results, METRIC_MAP)
-
-    # Hypothesis : One unique scenario for each country
-    df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
-    df_results_ = df_results.copy()
-    df_results_["key"] = df_results_["region"] + "_" + df_results_["sector"]
-    df_results_ = df_results_.set_index("key")
-
-    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
-               snakemake.config["scenario"]["planning_horizons"]
-
-    df_results_ = df_results_[horizons] * 1e6
-    df_results_.index = df_results_.index.str.replace("EL", "GR")
-
-    years = snakemake.config["scenario"]["planning_horizons"]
-    index_h2 = [str(y) + "_hydrogen" for y in years]
-    index_nh3 = [str(y) + "_ammonia" for y in years]
-    index_elec = [str(y) + "_electricity" for y in years]
-    industry = df_results[["region", "sector"] + years]
-    countries = get_eu27_countries()
-
-    result = pd.DataFrame([[] * 3], index=index_h2 + index_nh3 + index_elec)
-    for co in countries:
-        df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
-        share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
-        h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] * (1 - share_e_methanol)
-        nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + df_co.loc["nh3_marine"] * \
-                     pd.Series(snakemake.config["sector"]["shipping_methanol_share"]).loc[years]
-        elec_demand = df_co.loc["elec_ind"]
-        result.loc[index_h2, co] = h2_demand.values
-        result.loc[index_nh3, co] = nh3_demand.values
-        result.loc[index_elec, co] = elec_demand.values
-
-    df_results = result
-    df_results.columns = df_results.columns.str.replace("EL", "GR")
-
-    # Manual scaling for non-MS if missing
-    dict_non_MS = {"AL": "GR",
-                   "MK": "GR",
-                   "NO": "SK",
-                   "CH": "FR",
-                   "GB": "FR",
-                   "BA": "HR",
-                   "KV": "HU",
-                   "RS": "HU",
-                   "ME": "GR"}
-    dict_non_MS = {k: v for k, v in dict_non_MS.items() if not any(df_results.columns.str.startswith(k))}
-    historical_load_h = pd.read_csv(snakemake.input.load_hourly, index_col="utc_timestamp", parse_dates=True)
-    missing_load = []
-
-    for non_MS, MS in dict_non_MS.items():
-        df = df_results.loc[:, df_results.columns.str.startswith(MS)]
-        df *= historical_load_h[non_MS].sum() / historical_load_h[MS].sum()
-        df.columns = df.columns.str.replace(MS, non_MS)
-        missing_load.append(df)
-    df_results = pd.concat([df_results] + missing_load, axis=1)
-
-    return df_results
-
-
-def write_files(df_results):
-    """
-    Export of data
-    """
-    df_results.index = df_results.index.set_names("year")
-
-    path = Path(snakemake.output[0]).parent
-    for y in snakemake.config["scenario"]["planning_horizons"]:
-        try:
-            df_to_write = df_results.filter(like=str(y), axis=0)
-            df_to_write.index = df_to_write.index.str.replace(f"{y}_", "")
-            df_to_write.to_csv(Path(path, f"patex_ind_{y}.csv"))
-        except OSError:
-            os.makedirs(path)
-            df_results.loc[[y]].to_csv(Path(path, f"patex_ind_{y}.csv"))
-
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
@@ -164,8 +75,10 @@ if __name__ == "__main__":
 
     # Formatting data
     logging.info("Formatting data")
-    df_results = format_results(results)
+    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
+               snakemake.config["scenario"]["planning_horizons"]
+    df_results = format_results(results, horizons, METRIC_MAP, snakemake.input.load_hourly) * 1e-6  # TWh
 
     # Writing data
     logging.info("Writing data")
-    write_files(df_results)
+    write_files(df_results, snakemake.output, "patex_ind_")

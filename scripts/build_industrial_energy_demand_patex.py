@@ -10,11 +10,16 @@ Pathways Explorer. Data used are to override are the electrical, ammonia and hyd
 In the 2050 Pathways Explorer, ammonia for shipping is not modeled. The energy demand for ammonia is replaced by a
 demand in methanol. To overcome this limitation in PyPSA (where ammonia is well modeled), we shift the demand for H2
 used for methanol in ammonia demand. PyPSA will then choose the best way to produce this ammonia.
+
+When computing nodal fraction for hydrogen and ammonia, missing values are filled using fractions from electricity.
+
+Data are in TWh in this rule.
 """
 
 import logging
 
 import pandas as pd
+import numpy as np
 
 from _helpers import configure_logging
 
@@ -29,40 +34,52 @@ if __name__ == "__main__":
 
     configure_logging(snakemake)
 
-    years = snakemake.config["scenario"]["planning_horizons"]
-    index_h2 = [str(y) + "_hydrogen" for y in years]
-    index_nh3 = [str(y) + "_ammonia" for y in years]
-    index_elec = [str(y) + "_electricity" for y in years]
-    industry = df_results[["region", "sector"] + years]
-    countries = get_eu27_countries()
+    industrial_demand = pd.read_csv(snakemake.input["industrial_demand"], index_col=[0])
+    industry_patex = pd.read_csv(snakemake.input["industry_patex"], index_col=[0]).T
+    industry_patex.index = pd.MultiIndex.from_tuples(
+        industry_patex.index.str.split("_", n=1).to_list(), names=["country", "sector"])
+    industry_patex = industry_patex.reset_index().pivot_table(
+        values=snakemake.wildcards.planning_horizons, index="country", columns="sector")
 
-    result = pd.DataFrame([[] * 3], index=index_h2 + index_nh3 + index_elec)
-    for co in countries:
-        df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
-        share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
-        h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] * (1 - share_e_methanol)
-        nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + df_co.loc["nh3_marine"] * \
-                     pd.Series(snakemake.config["sector"]["shipping_methanol_share"]).loc[years]
-        elec_demand = df_co.loc["elec_ind"]
-        result.loc[index_h2, co] = h2_demand.values
-        result.loc[index_nh3, co] = nh3_demand.values
-        result.loc[index_elec, co] = elec_demand.values
+    industry_patex["share_methanol"] = (
+            industry_patex["methanol"]
+            / (industry_patex["methanol"] + industry_patex["fischer_tropsch"])
+    ).fillna(0)
 
-    df_results = result
+    industry_patex["electricity"] = industry_patex["elec_ind"]
+    industry_patex["hydrogen"] = (
+            industry_patex["h2_sectors"]  # demand from sectors
+            - industry_patex["h2_ind_nh3"]  # used to produce ammonia
+            + industry_patex["h2_efuels"] * (1 - industry_patex["share_methanol"])  # used for efuels but shipping
+    )
+    industry_patex["ammonia"] = (
+            industry_patex["nh3_ind"] * snakemake.config["industry"]["MWh_NH3_per_tNH3"] * 1e-3  # industrial demand
+            + (industry_patex["nh3_marine"]  # shipping demand
+               * snakemake.config["sector"]["shipping_methanol_share"][snakemake.wildcards.planning_horizons])
+    )
 
-    industry = pd.read_csv(snakemake.input["industrial_demand"], index_col=[0])
-    patex = pd.read_csv(snakemake.input["industry_patex"], index_col=[0]).T
-    new_demand = industry * 0
-    for carrier in ["hydrogen", "ammonia", "electricity"]:
-        for country in industry.index.str[:2].unique():
-            ca_co = industry.loc[new_demand.filter(like=country, axis=0).index, carrier]
-            if abs(ca_co.sum()) > 1e-6:
-                weights = (ca_co / ca_co.sum()).fillna(0)
-            else:
-                ca_co = industry.loc[new_demand.filter(like=country, axis=0).index, 'electricity']
-                weights = (ca_co / ca_co.sum()).fillna(0)
+    carriers = ["electricity", "hydrogen", "ammonia"]
+    carriers_excluded = [c for c in industrial_demand.columns if c not in carriers]
+    industry_patex = industry_patex[carriers]
+    industry_patex[carriers_excluded] = 0
 
-            patex_co = patex.loc[patex.filter(like=country, axis=0).index, carrier].values
-            new_demand.loc[new_demand.filter(like=country, axis=0).index, carrier] = weights * patex_co
-        logging.info(f"Carrier {carrier} amounts to {sum(new_demand[carrier])} [TWh]")
-    new_demand.to_csv(snakemake.output["industry_demand"])
+    industrial_demand["country"] = industrial_demand.index.str[:2]
+    industrial_demand.set_index("country", append=True, inplace=True)
+    nodal_fraction = (
+            industrial_demand
+            / industrial_demand[[]].join(industrial_demand.groupby(by="country").sum(), on="country")
+    )
+    nodal_fraction = nodal_fraction.replace([np.inf, -np.inf], np.nan).fillna({
+        "hydrogen": nodal_fraction["electricity"],
+        "ammonia": nodal_fraction["electricity"],
+    })
+    nodal_fraction[carriers_excluded] = 0
+
+    industrial_demand_patex = (
+            industrial_demand[[]].join(industry_patex, on="country")
+            * nodal_fraction
+    ).droplevel(1)
+
+    [logging.info(
+        f"Industrial {c} load is {v:.2f} TWh") for c, v in industrial_demand_patex[carriers].sum().to_dict().items()]
+    industrial_demand_patex.to_csv(snakemake.output["industrial_demand_patex"])
