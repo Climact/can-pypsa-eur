@@ -219,15 +219,7 @@ def get_results(scenarios_dict, variables_list):
     return results
 
 
-def format_results(results):
-    """
-    Format received JSON into dataframe
-    Change unit from TWh to MWh (* 1e6)
-    Add non-MS data using proportions
-
-    :param results: data in JSON format
-    :return df_results: data in dataframe
-    """
+def format_request(results, metric_map):
     df_results = []
     for (master_region, scenario), values in results.items():
         values = values['outputs']['0']
@@ -250,9 +242,23 @@ def format_results(results):
 
     df_results = (
         df_results.set_index("metric_id")
-        .join(METRIC_MAP.set_index("metric_id"))
+        .join(metric_map.set_index("metric_id"))
         .set_index("sector").reset_index()
     )
+    return df_results
+
+
+def format_results(results):
+    """
+    Format received JSON into dataframe
+    Change unit from TWh to MWh (* 1e6)
+    Add non-MS data using proportions
+
+    :param results: data in JSON format
+    :return df_results: data in dataframe
+    """
+    df_results = format_request(results, METRIC_MAP)
+
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
     df_results["key"] = df_results["region"] + "_" + df_results["sector"]

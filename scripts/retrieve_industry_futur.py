@@ -9,15 +9,16 @@ This rule downloads yearly industrial load data for each european country from t
 ammonia and hydrogen. This rule downloads appropriate years using configuration file. Yearly load data are defined
 by per-country scenarios.
 
-In the 2050 Pathways Explorer, ammonia for shipping is not modeled. The energy demand for ammonia is replaced by a
-demand in methanol. To overcome this limitation in PyPSA (where ammonia is well modeled), we shift the demand for H2
-used for methanol in ammonia demand. PyPSA will then choose the best way to produce this ammonia.
+This rule mainly reuse definitions from ``retrieve_load_futur``.
 
 **Releveant Settings**
 
 .. code:: yaml
 
     planning_horizons
+
+    snapshots:
+        start:
 
     snapshots:
         start:
@@ -34,20 +35,16 @@ used for methanol in ammonia demand. PyPSA will then choose the best way to prod
 
 import logging
 import os
-import re
 from pathlib import Path
 
 import pandas as pd
 
 from _helpers import configure_logging
 from retrieve_load_futur import fill_scenario_list
+from retrieve_load_futur import format_request
 from retrieve_load_futur import get_eu27_countries
 from retrieve_load_futur import get_results
 from retrieve_load_futur import load_scenario_builder
-
-# ToDo Move this to yaml configuration
-URL_TO_USE = "prod url"
-# URL_TO_USE = "test url"
 
 METRIC_MAP = pd.DataFrame([
     ["clm_CO2-need-by-way-of-prod_CCU_elc_e-methanol[MtCO2e]", "methanol"],
@@ -60,28 +57,6 @@ METRIC_MAP = pd.DataFrame([
     ["ind_energy-demand-by-carrier_electricity[TWh]", "elec_ind"],
 ], columns=["metric_id", "sector"])
 
-TEMPLATE_REQUEST = """
-{
-  "levers":
-  [LEVERS],
-  "outputs": {"0": [VARIABLES]},
-  "dimension": {"0": null},
-  "aggregate": true
-}
-"""
-API = {
-    "prod url": {
-        "db": "https://pathwaysexplorer.climact.com/api/v1.0/model_results",
-        "model": "https://pathwaysexplorer.climact.com/model/v1.0/model_results"
-    },
-    "test url": {
-        "db": "https://test.pathwaysexplorer.climact.com/api/v1.0/model_results",
-        "model": "https://test.pathwaysexplorer.climact.com/model/v1.0/model_results"
-    }
-}
-
-RX_SCENARIO = re.compile("^\[([A-z]+)\]\s(.*)$")
-
 
 def format_results(results):
     """
@@ -92,33 +67,19 @@ def format_results(results):
     :param results: data in JSON format
     :return df_results: data in dataframe
     """
-    df_results = []
-    for (master_region, scenario), values in results.items():
-        values = values['outputs']['0']
-        timeAxis = values[0]['timeAxis']
-        data = []
-        names = []
-        for i in values:
-            data.append(i['data'])
-            if RX_SCENARIO.match(scenario):
-                region = RX_SCENARIO.match(scenario).group(1)
-            else:
-                region = master_region
-            names.append((scenario, region, i['id'], i['title']))
-        df_results.append(
-            pd.DataFrame(data, index=pd.MultiIndex.from_tuples(names, names=['scenario', 'region', 'metric_id',
-                                                                             'metric_name']),
-                         columns=timeAxis))
+    df_results = format_request(results, METRIC_MAP)
 
-    df_results = pd.concat(df_results).reset_index(drop=False)
-
-    df_results = (
-        df_results.set_index("metric_id")
-        .join(METRIC_MAP.set_index("metric_id"))
-        .set_index("sector").reset_index()
-    )
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
+    df_results_ = df_results.copy()
+    df_results_["key"] = df_results_["region"] + "_" + df_results_["sector"]
+    df_results_ = df_results_.set_index("key")
+
+    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
+               snakemake.config["scenario"]["planning_horizons"]
+
+    df_results_ = df_results_[horizons] * 1e6
+    df_results_.index = df_results_.index.str.replace("EL", "GR")
 
     years = snakemake.config["scenario"]["planning_horizons"]
     index_h2 = [str(y) + "_hydrogen" for y in years]
@@ -132,7 +93,8 @@ def format_results(results):
         df_co = industry[industry.region.isin([co])].drop(columns=["region"]).set_index("sector")
         share_e_methanol = (df_co.loc["methanol"] / (df_co.loc["methanol"] + df_co.loc["fischer_tropsch"])).fillna(0)
         h2_demand = df_co.loc["h2_sectors"] - df_co.loc["h2_ind_nh3"] + df_co.loc["h2_efuels"] * (1 - share_e_methanol)
-        nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + df_co.loc["nh3_marine"] * pd.Series(snakemake.config["sector"]["shipping_methanol_share"]).loc[years]
+        nh3_demand = df_co.loc["nh3_ind"] * 5.166e-3 + df_co.loc["nh3_marine"] * \
+                     pd.Series(snakemake.config["sector"]["shipping_methanol_share"]).loc[years]
         elec_demand = df_co.loc["elec_ind"]
         result.loc[index_h2, co] = h2_demand.values
         result.loc[index_nh3, co] = nh3_demand.values
@@ -186,7 +148,8 @@ if __name__ == "__main__":
     if "snakemake" not in globals():
         from _helpers import mock_snakemake
 
-        snakemake = mock_snakemake("retrieve_industry_futur")
+        snakemake = mock_snakemake("retrieve_industry_futur",
+                                   configfiles="config.CANEurope.runner.yaml")
 
     configure_logging(snakemake)
 
