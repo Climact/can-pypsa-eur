@@ -663,6 +663,21 @@ rule build_transport_demand:
     script:
         "../scripts/build_transport_demand.py"
 
+rule build_industrial_energy_demand_patex:
+    input:
+        industrial_demand=RESOURCES +
+                        "industrial_energy_demand_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
+        industry_patex="data/patex/patex_ind_{planning_horizons}.csv",
+    output:
+        industrial_demand_patex=RESOURCES + "industrial_energy_demand_patex_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
+    resources:
+        mem_mb=2000,
+    log:
+        LOGS + "industrial_energy_demand_patex_elec_s{simpl}_{clusters}_{planning_horizons}.log",
+    conda:
+        "../envs/environment.yaml"
+    script:
+        "../scripts/build_industrial_energy_demand_patex.py"
 
 rule prepare_sector_network:
     params:
@@ -698,7 +713,7 @@ rule prepare_sector_network:
         clustered_pop_layout=RESOURCES + "pop_layout_elec_s{simpl}_{clusters}.csv",
         simplified_pop_layout=RESOURCES + "pop_layout_elec_s{simpl}.csv",
         industrial_demand=RESOURCES
-        + "industrial_energy_demand_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
+        + "industrial_energy_demand_patex_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
         heat_demand_urban=RESOURCES + "heat_demand_urban_elec_s{simpl}_{clusters}.nc",
         heat_demand_rural=RESOURCES + "heat_demand_rural_elec_s{simpl}_{clusters}.nc",
         heat_demand_total=RESOURCES + "heat_demand_total_elec_s{simpl}_{clusters}.nc",

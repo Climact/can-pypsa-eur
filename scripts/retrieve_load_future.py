@@ -53,11 +53,16 @@ METRIC_MAP = pd.DataFrame([
     ["tra_energy-demand_domestic_electricity_BEV_passenger_bus[TWh]", "TR_bus"],
     ["tra_energy-demand_domestic_electricity_PHEV_passenger_bus[TWh]", "TR_bus"],
     ["tra_energy-demand_domestic_electricity_CEV_freight_rail[TWh]", "TR_rail"],
+    ["tra_energy-demand_domestic_electricity_CEV_passenger_rail[TWh]", "TR_rail"],
     ["bld_energy-demand_non-residential_heating_electricity[TWh]", "HE_ter_spa"],
     ["bld_energy-demand_non-residential_hotwater_electricity[TWh]", "HE_ter_wat"],
     ["bld_energy-demand_residential_heating_electricity[TWh]", "HE_res_spa"],
     ["bld_energy-demand_residential_hotwater_electricity[TWh]", 'HE_res_wat'],
     ["ind_energy-demand-by-carrier_electricity[TWh]", "IN_tot"],
+    # Todo :  add for industry
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]","IN_tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]","IN_tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]","IN_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_refineries[TWh]", "SU_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_losses[TWh]", "SU_tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_refineries[TWh]", "tot"],
@@ -66,10 +71,11 @@ METRIC_MAP = pd.DataFrame([
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_bld[TWh]", "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_ind[TWh]", "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_tra[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]", "tot"],
-    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_heat-CHP[TWh]",  "tot"],
+    # Todo : add for industry
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_efuels[TWh]","tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-power-prod[TWh]","tot"],
+    # ["elc_elec-demand-by-energy-carrier-and-sector_electricity_hydrogen-for-sector[TWh]","tot"],
+    ["elc_elec-demand-by-energy-carrier-and-sector_electricity_heat-CHP[TWh]", "tot"],
     ["elc_elec-demand-by-energy-carrier-and-sector_electricity_heat-only[TWh]", "tot"]
 ], columns=["metric_id", "sector"])
 
@@ -108,7 +114,7 @@ def __safely_to_int(f):
         return int(f) if f.is_integer() else f
 
 
-def load_scenario_builder():
+def load_scenario_builder(path):
     """
     Read scenarios from scenario builder in the same folder.
     This scenario builder should only contain the data to model EU27 as sum.
@@ -116,7 +122,7 @@ def load_scenario_builder():
     :return df_scenarios: Dataframe of scenarios
     :return metrics: List of levers
     """
-    return pd.read_excel(snakemake.input.scenario_builder, sheet_name="Levers", header=[0, 1]).iloc[:, 4:]
+    return pd.read_excel(path, sheet_name="Levers", header=[0, 1]).iloc[:, 4:]
 
 
 def get_eu27_countries():
@@ -213,7 +219,7 @@ def get_results(scenarios_dict, variables_list):
     return results
 
 
-def format_results(results):
+def format_results(results, horizons, metric_map, load_hourly):
     """
     Format received JSON into dataframe
     Change unit from TWh to MWh (* 1e6)
@@ -244,16 +250,14 @@ def format_results(results):
 
     df_results = (
         df_results.set_index("metric_id")
-        .join(METRIC_MAP.set_index("metric_id"))
+        .join(metric_map.set_index("metric_id"))
         .set_index("sector").reset_index()
     )
+
     # Hypothesis : One unique scenario for each country
     df_results = df_results.groupby(by=["region", "sector"]).sum().reset_index()
     df_results["key"] = df_results["region"] + "_" + df_results["sector"]
     df_results = df_results.set_index("key")
-
-    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
-               snakemake.config["scenario"]["planning_horizons"]
 
     df_results = df_results[horizons] * 1e6
     df_results.index = df_results.index.str.replace("EL", "GR")
@@ -269,7 +273,7 @@ def format_results(results):
                    "RS": "HU",
                    "ME": "GR"}
     dict_non_MS = {k: v for k, v in dict_non_MS.items() if not any(df_results.index.str.startswith(k))}
-    historical_load_h = pd.read_csv(snakemake.input.load_hourly, index_col="utc_timestamp", parse_dates=True)
+    historical_load_h = pd.read_csv(load_hourly, index_col="utc_timestamp", parse_dates=True)
     missing_load = []
     for non_MS, MS in dict_non_MS.items():
         df = df_results[df_results.index.str.startswith(MS)]
@@ -281,20 +285,20 @@ def format_results(results):
     return df_results
 
 
-def write_files(df_results):
+def write_files(df_results, output, filename):
     """
     Export of data
     """
     df_results = df_results.T
     df_results.index = df_results.index.set_names("year")
 
-    path = Path(snakemake.output[0]).parent
+    path = Path(output[0]).parent
     for y in df_results.index:
         try:
-            df_results.loc[[y]].to_csv(Path(path, f"patex_{y}.csv"))
+            df_results.loc[[y]].to_csv(Path(path, f"{filename}{y}.csv"))
         except OSError:
             os.makedirs(path)
-            df_results.loc[[y]].to_csv(Path(path, f"patex_{y}.csv"))
+            df_results.loc[[y]].to_csv(Path(path, f"{filename}{y}.csv"))
 
 
 if __name__ == "__main__":
@@ -307,7 +311,7 @@ if __name__ == "__main__":
 
     # Load configuration
     logging.info("Loading configuration")
-    df_scenarios = load_scenario_builder()
+    df_scenarios = load_scenario_builder(snakemake.input.scenario_builder)
     scenarios_dict = fill_scenario_list(df_scenarios)
 
     # Getting data from API
@@ -316,8 +320,10 @@ if __name__ == "__main__":
 
     # Formatting data
     logging.info("Formatting data")
-    df_results = format_results(results)
+    horizons = [pd.Timestamp(snakemake.config["snapshots"]["start"]).year] + \
+               snakemake.config["scenario"]["planning_horizons"]
+    df_results = format_results(results, horizons, METRIC_MAP, snakemake.input.load_hourly)
 
     # Writing data
     logging.info("Writing data")
-    write_files(df_results)
+    write_files(df_results, snakemake.output, "patex_")
