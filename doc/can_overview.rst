@@ -3,14 +3,14 @@
 
   SPDX-License-Identifier: CC-BY-4.0
 
-.. _veka_overview:
+.. _can_overview:
 
 ##########################################
 Overview
 ##########################################
 
 
-This chapter aims to give a broad overview of the use of PyPSA-Eur in the context of the *Energie Studie 2050+* for the *Flemish Energy and Climate Agency* (VEKA, Belgium).
+This chapter aims to give a broad overview of the use of PyPSA-Eur in the context of the *PAC scenario modelling 2.0* for the *Climate Action Network Europe* (CAN Europe).
 
 High level description
 ===========================

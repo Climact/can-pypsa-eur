@@ -9,11 +9,11 @@
 .. toctree::
     :hidden:
     :maxdepth: 1
-    :caption: Energie Studie 2050+ for VEKA
+    :caption: PAC scenario modelling 2.0 for CAN Europe
 
-    veka_overview
-    veka_configurations
-    veka_model
+    can_overview
+    can_configurations
+    can_model
 
 
 .. toctree::

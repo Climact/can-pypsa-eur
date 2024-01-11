@@ -252,7 +252,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc_pdf, "PyPSA-Eur.tex", "PyPSA-Eur Documentation for VEKA", author_pdf, "manual"),
+    (master_doc_pdf, "PyPSA-Eur.tex", "PyPSA-Eur Documentation for CAN Europe", author_pdf, "manual"),
 ]
 
 
@@ -261,7 +261,7 @@ rinoh_documents = [
     (
         master_doc_pdf,  # top-level file (index.rst)
         "PyPSA-Eur",  # output (target.pdf)
-        "PyPSA-Eur Documentation for VEKA",  # document title
+        "PyPSA-Eur Documentation for CAN Europe",  # document title
         author_pdf,
     )
 ]  # document author
