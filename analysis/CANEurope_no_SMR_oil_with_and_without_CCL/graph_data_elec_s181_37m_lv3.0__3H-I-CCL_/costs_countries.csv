@@ -1,0 +1,862 @@
+type,cost,country,carrier,units,2030,2035,2040
+generators,capital,AL,onwind,Euro,16408076.71,16408141.76,16408076.71
+generators,capital,AL,ror,Euro,14418558.84,14418558.84,14418558.84
+generators,capital,AL,solar,Euro,960681.5995,238544533.1,238544543.3
+generators,capital,AL,solar rooftop,Euro,96746907.08,136615933.6,136615933.6
+generators,capital,AT,onwind,Euro,984484523.1,979014926.5,894215644.22
+generators,capital,AT,ror,Euro,1435125229.15,1435125229.15,1435125229.15
+generators,capital,AT,solar,Euro,170005372.19,557936905.55,557929663.33
+generators,capital,AT,solar rooftop,Euro,355639163.44,683144517.34,982845130.71
+generators,capital,BA,onwind,Euro,76538201.74,76538275.91,76538201.74
+generators,capital,BA,solar,Euro,4765753.339,70660486.45,250571784.8
+generators,capital,BA,solar rooftop,Euro,157947538.1,303400231.1,346251773.1
+generators,capital,BE,offwind,Euro,426411924.0,426411924.0,426411924.0
+generators,capital,BE,offwind-ac,Euro,304.5432325,231163532.9,231163627.9
+generators,capital,BE,offwind-dc,Euro,404590590.2,404590590.2,404590590.2
+generators,capital,BE,onwind,Euro,378435851.77,470091963.92,456529384.73
+generators,capital,BE,ror,Euro,23894183.416,23894183.416,23894183.416
+generators,capital,BE,solar,Euro,330965309.07,330966396.4,330964744.45
+generators,capital,BE,solar rooftop,Euro,3988.0136999,426282724.91,816374689.7
+generators,capital,BG,onwind,Euro,90421621.94,262887261.66,755926076.76
+generators,capital,BG,ror,Euro,6700741.038,6700741.038,6700741.038
+generators,capital,BG,solar,Euro,94015338.58,1043146812.1,1043146848.1
+generators,capital,BG,solar rooftop,Euro,303030180.2,582088303.1,718220126.0
+generators,capital,CH,onwind,Euro,26034147.313,26033940.439,26033854.330000002
+generators,capital,CH,ror,Euro,1377480907.8,1377480907.8,1377480907.8
+generators,capital,CH,solar,Euro,208277335.8,566137928.2,566137950.5
+generators,capital,CH,solar rooftop,Euro,320102799.0,614882949.5,884636665.3
+generators,capital,CZ,onwind,Euro,105012896.67,105013014.82,244323053.24
+generators,capital,CZ,ror,Euro,12033329.04,12033329.04,12033329.04
+generators,capital,CZ,solar,Euro,126384610.03999999,126384876.41,126384150.35999998
+generators,capital,CZ,solar rooftop,Euro,74426973.1657027,467779596.61,827738252.4000001
+generators,capital,DE,offwind,Euro,1532541573.0,1532541573.0,1532541573.0
+generators,capital,DE,offwind-ac,Euro,859280337.47,859280337.47,859280337.47
+generators,capital,DE,offwind-dc,Euro,3579748443.74,3579748443.74,3579748443.74
+generators,capital,DE,onwind,Euro,10420768618.7,9754048153.9,8454278688.5
+generators,capital,DE,ror,Euro,848572078.0665,848572078.0665,848572078.0665
+generators,capital,DE,solar,Euro,3199175339.2,3458499198.8,3458488965.2999997
+generators,capital,DE,solar rooftop,Euro,930889676.6198286,3970890025.5099998,6752811105.48
+generators,capital,DK,offwind,Euro,436036262.4,426619304.5,356223065.9
+generators,capital,DK,offwind-ac,Euro,17809782.46132,2395240820.771917,2980867178.6
+generators,capital,DK,offwind-dc,Euro,523389816.90000004,2295500328.4,3155255237.5
+generators,capital,DK,onwind,Euro,2010375458.0,1828585590.9,1807878980.4
+generators,capital,DK,solar,Euro,149494249.62,206484645.26999998,206485754.62
+generators,capital,DK,solar rooftop,Euro,56701948.239493296,206743252.13,344046718.7
+generators,capital,EE,offwind-ac,Euro,20450254.97,20450432.31,20450254.97
+generators,capital,EE,offwind-dc,Euro,21476358.65,21476601.52,21476358.65
+generators,capital,EE,onwind,Euro,374507163.4,2174772757.0,2174597247.0
+generators,capital,EE,solar,Euro,25352424.29,25352448.11,25352175.85
+generators,capital,EE,solar rooftop,Euro,47808202.62,91834411.8,132122875.3
+generators,capital,ES,offwind-ac,Euro,484296263.87214553,484294396.1916939,484293211.6000193
+generators,capital,ES,offwind-dc,Euro,24956357.878,24956357.878,24956357.878
+generators,capital,ES,onwind,Euro,5317638399.4,9973581746.6,9947512881.9
+generators,capital,ES,ror,Euro,43976080.22,43976080.22,43976080.22
+generators,capital,ES,solar,Euro,3973557928.7400002,5030672229.01,5030672283.91
+generators,capital,ES,solar rooftop,Euro,1628410519.3544521,3221127245.84,4678624866.55
+generators,capital,FI,offwind,Euro,12687913.379999999,12687913.379999999,12687913.379999999
+generators,capital,FI,offwind-ac,Euro,1573.1168938,2600.3217687,2.4010000000000002e-05
+generators,capital,FI,offwind-dc,Euro,1979.5839485000001,3834472021.0371118,3834471405.200015
+generators,capital,FI,onwind,Euro,706969359.6,7136844980.0,7132943861.8
+generators,capital,FI,ror,Euro,459757585.866,459757585.866,459757585.866
+generators,capital,FI,solar,Euro,27528186.73,27528078.902,27527605.336
+generators,capital,FI,solar rooftop,Euro,106602156.4884216,263039692.27334315,406196597.9800017
+generators,capital,FR,offwind,Euro,90493290.08500001,90493290.08500001,90493290.08500001
+generators,capital,FR,offwind-ac,Euro,434751384.56167156,1241461852.7292893,2308855979.280041
+generators,capital,FR,offwind-dc,Euro,577329310.354072,802300902.7495923,802299147.3900869
+generators,capital,FR,onwind,Euro,4489530126.37,12303596401.0,13032492322.52
+generators,capital,FR,ror,Euro,2044995460.494,2044995460.494,2044995460.494
+generators,capital,FR,solar,Euro,1162647204.59,5729749739.08,5729747866.16
+generators,capital,FR,solar rooftop,Euro,1027916366.852962,3387371535.5,5546517674.8
+generators,capital,GB,offwind,Euro,2625059523.4,2625059523.4,2585468709.0
+generators,capital,GB,offwind-ac,Euro,1333972568.4225965,8115747584.55459,8658935281.100246
+generators,capital,GB,offwind-dc,Euro,4343312610.222371,4343295790.20342,4343294548.542043
+generators,capital,GB,onwind,Euro,6374945723.06,11633200511.0,11587734787.6
+generators,capital,GB,ror,Euro,2629113522.59,2629113522.59,2629113522.59
+generators,capital,GB,solar,Euro,702825749.88,1510500808.01,1510493895.99
+generators,capital,GB,solar rooftop,Euro,397531707.82374877,2625335689.8555336,4664004883.360009
+generators,capital,GR,offwind-dc,Euro,474.6841357,1227391488.5,1227391829.3
+generators,capital,GR,onwind,Euro,721955305.4,2791072055.3,2775826490.6
+generators,capital,GR,ror,Euro,30841357.189,30841357.189,30841357.189
+generators,capital,GR,solar,Euro,526403180.1,932521030.7,932521032.7
+generators,capital,GR,solar rooftop,Euro,339742173.3,652608064.7,938912054.0
+generators,capital,HR,onwind,Euro,141546996.7,141547176.7,141546996.7
+generators,capital,HR,ror,Euro,81715456.28,81715456.28,81715456.28
+generators,capital,HR,solar,Euro,8734607.013,359984520.8,359985067.8
+generators,capital,HR,solar rooftop,Euro,158993927.9,305410238.3,439396014.1
+generators,capital,HU,onwind,Euro,36645270.980000004,1839129457.74,2067812261.7
+generators,capital,HU,ror,Euro,5893062.4309,5893062.4309,5893062.4309
+generators,capital,HU,solar,Euro,143301525.07999998,721046348.39,721046169.3199999
+generators,capital,HU,solar rooftop,Euro,406566652.1,780970804.4000001,1123588577.5
+generators,capital,IE,offwind,Euro,4750897.729,4750897.729,0.0
+generators,capital,IE,offwind-ac,Euro,623608455.2,2009026056.0,2009026063.0
+generators,capital,IE,offwind-dc,Euro,50398719.97,50398719.97,50398719.97
+generators,capital,IE,onwind,Euro,656323013.1,3619138922.0,3617143969.0
+generators,capital,IE,ror,Euro,64614288.58,64614288.58,64614288.58
+generators,capital,IE,solar rooftop,Euro,1917.290828,158970317.2,304444280.6
+generators,capital,IT,offwind,Euro,5032342.1278,5032342.1278,5032342.1278
+generators,capital,IT,offwind-ac,Euro,77306153.5530633,364559403.01464874,364556973.9508694
+generators,capital,IT,offwind-dc,Euro,102601687.2533259,102532301.0190241,102467709.7160036
+generators,capital,IT,onwind,Euro,1916463207.27,3759971447.08,3642317088.66
+generators,capital,IT,ror,Euro,2220963608.662,2220963608.662,2220963608.662
+generators,capital,IT,solar,Euro,2252052770.74,3556503490.2,3556503590.7
+generators,capital,IT,solar rooftop,Euro,2268617236.82,4357769012.1,6269554568.1
+generators,capital,LT,offwind-ac,Euro,65891959.51,65892191.03,65891959.51
+generators,capital,LT,offwind-dc,Euro,71263303.23,71263821.41,71263303.23
+generators,capital,LT,onwind,Euro,109277791.6,109278078.2,109277791.6
+generators,capital,LT,ror,Euro,30213162.72,30213162.72,30213162.72
+generators,capital,LT,solar,Euro,19047793.78,19047841.3,19047605.57
+generators,capital,LT,solar rooftop,Euro,81015374.19,187311097.0,244105552.8
+generators,capital,LU,onwind,Euro,46770674.19,45239576.87,42942123.33
+generators,capital,LU,ror,Euro,9243432.95,9243432.95,9243432.95
+generators,capital,LU,solar,Euro,15035260.21,15036287.04,15035082.77
+generators,capital,LU,solar rooftop,Euro,23899173.83,45908169.95,66048646.69
+generators,capital,LV,offwind-ac,Euro,12529320.49,12529509.37,12529320.49
+generators,capital,LV,offwind-dc,Euro,13402486.52,13402736.72,13402486.52
+generators,capital,LV,onwind,Euro,20323042.03,20323388.51,17697750.01
+generators,capital,LV,ror,Euro,459509299.5,459509299.5,459509299.5
+generators,capital,LV,solar,Euro,2450668.97,2450691.164,2450417.588
+generators,capital,LV,solar rooftop,Euro,74682970.89,143458047.6,206394233.8
+generators,capital,ME,onwind,Euro,27346793.16,27346851.73,27346793.16
+generators,capital,ME,ror,Euro,93439440.66,93439440.66,93439440.66
+generators,capital,ME,solar,Euro,942300.1216,65214161.66,65214198.96
+generators,capital,ME,solar rooftop,Euro,28821839.84,55363670.21,79652145.74
+generators,capital,MK,onwind,Euro,16408076.09,16408115.17,16408076.09
+generators,capital,MK,solar,Euro,4090596.597,224575902.6,224575926.3
+generators,capital,MK,solar rooftop,Euro,83371034.38,160146768.9,227621608.4
+generators,capital,NL,offwind,Euro,484704684.8,484704684.8,484704684.8
+generators,capital,NL,offwind-ac,Euro,578237523.75,578237523.75,578237523.75
+generators,capital,NL,offwind-dc,Euro,1263373499.157752,9885605861.936,9885569071.086
+generators,capital,NL,onwind,Euro,1043514383.1,1253086265.5,1194954207.89
+generators,capital,NL,solar,Euro,904566421.8000001,904566421.8000001,904566421.8000001
+generators,capital,NL,solar rooftop,Euro,260431299.9394653,841425184.0400001,1373094366.75
+generators,capital,NO,offwind,Euro,12065772.012,12065772.012,12065772.012
+generators,capital,NO,offwind-ac,Euro,1147.3154322,782191547.9086071,782190401.3000138
+generators,capital,NO,offwind-dc,Euro,1546.4144094,524455686.99259794,524455327.3340063
+generators,capital,NO,onwind,Euro,793056985.54,2206168018.62,2182334766.0
+generators,capital,NO,ror,Euro,62969017.35,62969017.35,62969017.35
+generators,capital,NO,solar,Euro,13799503.978,13799378.262,13798836.054000001
+generators,capital,NO,solar rooftop,Euro,8296.330506949998,75314293.89781716,144233306.70001346
+generators,capital,PL,offwind-ac,Euro,558380495.046574,558379539.8587525,558378970.7000118
+generators,capital,PL,offwind-dc,Euro,611374716.0,611374716.0,611374716.0
+generators,capital,PL,onwind,Euro,1148932349.5,6482890745.900001,7017740280.4
+generators,capital,PL,ror,Euro,54563287.341000006,54563287.341000006,54563287.341000006
+generators,capital,PL,solar,Euro,535893222.07,535893320.40999997,535891833.2
+generators,capital,PL,solar rooftop,Euro,279867481.8134393,1712658892.23,2979621969.8
+generators,capital,PT,offwind,Euro,4713192.192,4713192.192,4713192.192
+generators,capital,PT,offwind-ac,Euro,19484106.1221594,19484050.8139768,19483641.73000254
+generators,capital,PT,onwind,Euro,987272788.3,978197605.4000001,2450060886.3
+generators,capital,PT,ror,Euro,789281483.4399999,789281483.4399999,789281483.4399999
+generators,capital,PT,solar,Euro,454884285.59,634881125.9,634881129.1
+generators,capital,PT,solar rooftop,Euro,359632119.6,690814508.2,993879948.2
+generators,capital,RO,offwind-ac,Euro,493.3768424,298006132.6,298006140.8
+generators,capital,RO,offwind-dc,Euro,546.0514098,230623937.3,230623946.8
+generators,capital,RO,onwind,Euro,485740370.29999995,485741248.79999995,485739683.4
+generators,capital,RO,ror,Euro,260386608.82,260386608.82,260386608.82
+generators,capital,RO,solar,Euro,68579323.43,689232875.93,2150246283.0
+generators,capital,RO,solar rooftop,Euro,610663480.751888,1309571816.2,1555629327.6
+generators,capital,RS,onwind,Euro,336912486.2,336912773.03999996,336912193.12
+generators,capital,RS,ror,Euro,511051160.3,511051160.3,511051160.3
+generators,capital,RS,solar,Euro,610.1955569,773150857.5,949909205.5999999
+generators,capital,RS,solar rooftop,Euro,293537617.9,563854152.8,811221206.0999999
+generators,capital,SE,offwind,Euro,38459648.286,36008788.344000004,36008788.344000004
+generators,capital,SE,offwind-ac,Euro,79164178.2891197,727554504.3033706,727476948.4000248
+generators,capital,SE,offwind-dc,Euro,126617458.0435998,647316442.6100167,647315188.9000175
+generators,capital,SE,onwind,Euro,1854112607.1,5272209735.2,8395579547.0
+generators,capital,SE,ror,Euro,531273039.38,531273039.38,531273039.38
+generators,capital,SE,solar,Euro,123626156.37,123625801.49000001,123624671.10000001
+generators,capital,SE,solar rooftop,Euro,319728846.7366354,614165284.1934117,898664256.6700152
+generators,capital,SI,onwind,Euro,16043817.4,16043891.9,16043817.4
+generators,capital,SI,ror,Euro,272898148.7,272898148.7,272898148.7
+generators,capital,SI,solar,Euro,30575663.38,30576733.07,30575510.17
+generators,capital,SI,solar rooftop,Euro,3265.618783,86409006.29,165482023.8
+generators,capital,SK,onwind,Euro,54256038.72,54256250.89,54256038.72
+generators,capital,SK,ror,Euro,407865731.1,407865731.1,407865731.1
+generators,capital,SK,solar,Euro,31242318.11,31242558.49,31242104.38
+generators,capital,SK,solar rooftop,Euro,223652740.0,429613034.0,618087592.6
+generators,fuel,,uranium,Euro,3086091600.0,2362995241.0,1.03e-11
+generators,fuel,AL,gas,Euro,467005795.5,0.009584251,1.07e-10
+generators,fuel,BE,gas,Euro,1741262545.0,0.009545965,1.09e-10
+generators,fuel,BG,gas,Euro,315684187.5,0.009641317,1.11e-10
+generators,fuel,DE,gas,Euro,3246749896.0,0.009632645,1.11e-10
+generators,fuel,DK,gas,Euro,822448908.4,0.009611314,1.11e-10
+generators,fuel,EE,gas,Euro,195086345.7,0.01527849,1.8e-10
+generators,fuel,ES,gas,Euro,5817381414.0,0.009620341,1.1e-10
+generators,fuel,FI,gas,Euro,487065605.4,0.006006908,6.63e-11
+generators,fuel,FR,gas,Euro,2086290225.0,0.009572866,1.1e-10
+generators,fuel,GB,gas,Euro,4617995434.0,0.009678533,1.12e-10
+generators,fuel,GR,gas,Euro,2040563607.0,0.009527681,1.1e-10
+generators,fuel,HU,gas,Euro,450857726.9,0.009571316,1.09e-10
+generators,fuel,IE,gas,Euro,812810629.4,0.009611971,1.11e-10
+generators,fuel,IT,gas,Euro,5802789950.4,0.019180943,2.17e-10
+generators,fuel,LT,gas,Euro,239358818.3,0.009551602,1.09e-10
+generators,fuel,LV,gas,Euro,185582291.7,0.009588551,1.08e-10
+generators,fuel,NL,gas,Euro,3088730127.0,0.009637748,1.11e-10
+generators,fuel,NO,gas,Euro,4715010384.0,0.009717331,1.13e-10
+generators,fuel,PL,gas,Euro,1790149389.0,0.009565146,1.09e-10
+generators,fuel,PT,gas,Euro,704760063.2,0.009595349,1.07e-10
+generators,fuel,RO,gas,Euro,218150469.0,0.009651026,1.12e-10
+generators,fuel,SE,gas,Euro,232307275.4,0.00602426,6.38e-11
+generators,fuel,SK,gas,Euro,1986714285.0,0.009572441,1.1e-10
+generators,marginal,AL,onwind,Euro,70634.25315,69288.97707,69010.13018
+generators,marginal,AL,solar,Euro,267.6552107,70225.85702,70332.54996
+generators,marginal,AL,solar rooftop,Euro,31004.09313,39249.17279,39409.7291
+generators,marginal,AT,onwind,Euro,13664360.9593,13502045.922530001,12740962.51635
+generators,marginal,AT,solar,Euro,37210.173501,125519.861756,125767.31034699999
+generators,marginal,AT,solar rooftop,Euro,90944.668358,179667.19312,268593.29806
+generators,marginal,BA,onwind,Euro,390515.2475,382468.2044,380886.5229
+generators,marginal,BA,solar,Euro,1151.903001,17686.7073,66178.47694
+generators,marginal,BA,solar rooftop,Euro,44704.40546,83652.49505,93361.73413
+generators,marginal,BE,offwind,Euro,165795.8494,165659.4378,165218.6229
+generators,marginal,BE,offwind-ac,Euro,0.0986109,95001.22803,94757.54234
+generators,marginal,BE,offwind-dc,Euro,161172.3606,160957.0114,160549.9387
+generators,marginal,BE,onwind,Euro,11811195.168,14446999.848,13940084.612
+generators,marginal,BE,solar,Euro,66125.49786,66125.67567,66125.42181
+generators,marginal,BE,solar rooftop,Euro,0.887601376,108099.11951,216198.91239
+generators,marginal,BG,onwind,Euro,1169162.3806,3852591.6451999997,11762953.570899999
+generators,marginal,BG,solar,Euro,25121.50851,288982.43319999997,287097.1399
+generators,marginal,BG,solar rooftop,Euro,94244.03915,180324.41316,209570.17810000002
+generators,marginal,CH,biomass,Euro,2805283.97,12659001.21,4274458.457
+generators,marginal,CH,onwind,Euro,148332.876771,145954.288441,145595.265814
+generators,marginal,CH,solar,Euro,46639.86502,130308.19161000001,129909.00521
+generators,marginal,CH,solar rooftop,Euro,82773.15192,165022.45625,242222.05644999997
+generators,marginal,CZ,biomass,Euro,51296135.8,260864988.5,2.75e-11
+generators,marginal,CZ,onwind,Euro,2094477.3653000002,2088965.3632,5075256.6438
+generators,marginal,CZ,solar,Euro,25671.369294,25668.122599000002,25378.676691
+generators,marginal,CZ,solar rooftop,Euro,17812.864990703,118239.87533000001,217385.08384
+generators,marginal,DE,biomass,Euro,221351417.2,978421446.4,195525160.1
+generators,marginal,DE,offwind,Euro,564212.85572,563477.01093,559925.79781
+generators,marginal,DE,offwind-ac,Euro,309612.12984999997,309114.32045999996,307540.31168
+generators,marginal,DE,offwind-dc,Euro,1501338.10893,1499918.0837299998,1490698.44921
+generators,marginal,DE,onwind,Euro,256647719.15,239868823.892,211607532.19
+generators,marginal,DE,solar,Euro,628715.05727,685618.39468,684926.2332
+generators,marginal,DE,solar rooftop,Euro,219199.735532231,974982.563258,1725807.47347
+generators,marginal,DK,offwind,Euro,169909.89205000002,165998.41262000002,138108.33778
+generators,marginal,DK,offwind-ac,Euro,7367.8687559360005,1026429.833640544,1254257.925
+generators,marginal,DK,offwind-dc,Euro,197340.19229,905485.5898600001,1252638.5365
+generators,marginal,DK,onwind,Euro,89685731.33999999,80613312.7,79529868.83
+generators,marginal,DK,solar,Euro,30571.07532,43238.93818,43239.32852
+generators,marginal,DK,solar rooftop,Euro,13828.588233023,52318.599879999994,90808.90306
+generators,marginal,EE,offwind-ac,Euro,5929.458712,5929.508556,5929.50232
+generators,marginal,EE,offwind-dc,Euro,7165.950451,7166.018733,7165.990882
+generators,marginal,EE,onwind,Euro,11793220.64,67055731.38,67664061.79
+generators,marginal,EE,solar,Euro,5041.188854,5041.190204,5041.15469
+generators,marginal,EE,solar rooftop,Euro,11071.50368,22143.00071,33213.67315
+generators,marginal,ES,offwind-ac,Euro,159343.515358515,159016.13733601,158694.84072000277
+generators,marginal,ES,offwind-dc,Euro,5401.655754,5386.478563,5387.238501
+generators,marginal,ES,onwind,Euro,124274062.376,226662293.012,227916553.115
+generators,marginal,ES,solar,Euro,1280507.2836499999,1605588.99236,1605583.31554
+generators,marginal,ES,solar rooftop,Euro,600582.220354012,1231521.3463,1838958.65881
+generators,marginal,FI,offwind,Euro,4037.5613292,4037.5238023,4037.5854942
+generators,marginal,FI,offwind-dc,Euro,0.586190344,1351288.907531075,1351288.8838900048
+generators,marginal,FI,onwind,Euro,17226284.112999998,183150531.215,182287221.534
+generators,marginal,FI,solar,Euro,4915.684477000001,4915.6654340000005,4915.60181
+generators,marginal,FI,solar rooftop,Euro,23223.200761996002,60322.12791616999,97421.31995000031
+generators,marginal,FR,biomass,Euro,15146591.03,93941963.31,30554521.7
+generators,marginal,FR,offwind,Euro,26226.272109,26193.463622,26148.214574
+generators,marginal,FR,offwind-ac,Euro,142175.01578095302,472734.89131583,860359.7750650117
+generators,marginal,FR,offwind-dc,Euro,225799.43679202802,313265.930086994,312359.20441002585
+generators,marginal,FR,onwind,Euro,128241531.00439,332303114.80439997,351457065.11987
+generators,marginal,FR,solar,Euro,291629.575524,1418650.584647,1418711.540637
+generators,marginal,FR,solar rooftop,Euro,306518.039293699,996753.59396,1686584.62549
+generators,marginal,GB,biomass,Euro,136618520.9359,922236779.6509999,367421417.056
+generators,marginal,GB,offwind,Euro,1023307.21812,1023307.32368,1007403.18216
+generators,marginal,GB,offwind-ac,Euro,531356.224890413,3268268.0286191283,3485819.4226001035
+generators,marginal,GB,offwind-dc,Euro,1771810.7964418898,1771805.55378489,1771805.1301860164
+generators,marginal,GB,onwind,Euro,268485252.322,467195856.999,463564532.545
+generators,marginal,GB,solar,Euro,134909.528799,308763.678727,308762.458361
+generators,marginal,GB,solar rooftop,Euro,93792.08486004,639861.994685297,1185933.133130002
+generators,marginal,GR,offwind-dc,Euro,0.085923981,321625.98335,321860.10319
+generators,marginal,GR,onwind,Euro,11027826.662999999,49193682.016,49202720.441
+generators,marginal,GR,solar,Euro,161687.71432,287824.0031,287946.2987
+generators,marginal,GR,solar rooftop,Euro,120095.96061000001,239503.18709999998,354272.8772
+generators,marginal,HR,onwind,Euro,1475913.239,1453043.587,1452784.715
+generators,marginal,HR,solar,Euro,2124.747091,91617.32169,91254.40963
+generators,marginal,HR,solar rooftop,Euro,45066.84661,88199.3657,124084.5605
+generators,marginal,HU,onwind,Euro,606320.8626999999,34791348.384100005,38199065.344
+generators,marginal,HU,solar,Euro,34117.27721,179585.11744,180133.429
+generators,marginal,HU,solar rooftop,Euro,112581.74089,222787.95984,329441.9172
+generators,marginal,IE,offwind,Euro,1886.695367,1886.746891,0.0
+generators,marginal,IE,offwind-ac,Euro,242869.0897,801784.2439,801784.3452
+generators,marginal,IE,offwind-dc,Euro,21792.9499,21793.01872,21793.04243
+generators,marginal,IE,onwind,Euro,24086006.33,137257732.5,137648433.0
+generators,marginal,IE,solar rooftop,Euro,0.408892416,38044.11367,76088.26298
+generators,marginal,IT,offwind-ac,Euro,14576.735009032,73647.53051152501,73427.11376013444
+generators,marginal,IT,offwind-dc,Euro,18579.760843624,18454.450238731,18423.22686810041
+generators,marginal,IT,onwind,Euro,26697757.4757,63121649.55593,62020518.44303
+generators,marginal,IT,solar,Euro,642391.45072,1001665.37738,1003538.30443
+generators,marginal,IT,solar rooftop,Euro,716143.1973,1427387.29537,2139293.60475
+generators,marginal,LT,offwind-ac,Euro,21885.23734,21885.30056,21833.52805
+generators,marginal,LT,offwind-dc,Euro,25051.09713,25051.25932,25002.24726
+generators,marginal,LT,onwind,Euro,2751492.573,2601311.662,2637321.33
+generators,marginal,LT,solar,Euro,3750.327931,3750.331097,3747.606644
+generators,marginal,LT,solar rooftop,Euro,18577.32176,45021.29911,59425.15078
+generators,marginal,LU,onwind,Euro,1121097.643,1077418.764,1019775.103
+generators,marginal,LU,solar,Euro,2972.425076,2972.561254,2972.40526
+generators,marginal,LU,solar rooftop,Euro,5502.677529,11005.32655,16508.28634
+generators,marginal,LV,offwind-ac,Euro,3927.87211,3927.921379,3917.07478
+generators,marginal,LV,offwind-dc,Euro,4527.762151,4527.829372,4517.849942
+generators,marginal,LV,onwind,Euro,555796.4138,513817.2753,457174.1311
+generators,marginal,LV,solar rooftop,Euro,17344.98558,34689.98551,51828.87069
+generators,marginal,ME,onwind,Euro,121382.4059,119408.922,119003.0048
+generators,marginal,ME,solar,Euro,235.635986,17286.59656,17228.16823
+generators,marginal,ME,solar rooftop,Euro,8449.989764,16557.26214,24006.28311
+generators,marginal,MK,onwind,Euro,52161.64372,48923.4775,48674.19424
+generators,marginal,MK,solar,Euro,1130.368003,65232.67307,65139.50423
+generators,marginal,MK,solar rooftop,Euro,26935.70111,52265.65794,69965.39734
+generators,marginal,NL,offwind,Euro,196673.86204,196395.98844,195143.79906
+generators,marginal,NL,offwind-ac,Euro,227941.02138,227718.59720000002,226329.07712
+generators,marginal,NL,offwind-dc,Euro,492541.884166558,3844846.4058809998,3836925.5143131
+generators,marginal,NL,onwind,Euro,39036161.2,44268322.619,41942632.372
+generators,marginal,NL,solar,Euro,178712.8567,178712.78075,178712.87193
+generators,marginal,NL,solar rooftop,Euro,60985.741870786,206919.153963,352854.07347
+generators,marginal,NO,offwind,Euro,3027.1405981000003,3027.1224132,3027.1651825999998
+generators,marginal,NO,offwind-ac,Euro,0.203723771,250640.55944911102,250640.3650000029
+generators,marginal,NO,offwind-dc,Euro,0.442800327,191552.637739814,191552.74141600184
+generators,marginal,NO,onwind,Euro,16812482.926,52457006.941,51935732.99
+generators,marginal,NO,solar,Euro,2168.0023455,2167.9892624,2167.9231488
+generators,marginal,NO,solar rooftop,Euro,1.7741740579999998,18008.599178665,36017.009110002604
+generators,marginal,PL,offwind-ac,Euro,190419.18695210002,190365.53491606502,189513.19040000357
+generators,marginal,PL,offwind-dc,Euro,223418.05955,223353.88497999997,222313.09964
+generators,marginal,PL,onwind,Euro,32433222.240999997,174133656.849,187648394.302
+generators,marginal,PL,solar,Euro,105103.83974,105103.84916,105046.43055
+generators,marginal,PL,solar rooftop,Euro,64461.528008551,419529.48851,759035.91702
+generators,marginal,PT,offwind,Euro,1171.1244081,1169.8343567000002,1168.6631616
+generators,marginal,PT,offwind-ac,Euro,5100.004409637,5093.121104958999,5085.289982000559
+generators,marginal,PT,onwind,Euro,18843937.996,18648578.518,52257961.401
+generators,marginal,PT,solar,Euro,143132.79825,199849.17511,199835.60801999999
+generators,marginal,PT,solar rooftop,Euro,128530.66167999999,257042.7086,380558.2509
+generators,marginal,RO,offwind-ac,Euro,0.11037844,79736.7369,79055.89922
+generators,marginal,RO,offwind-dc,Euro,0.127570909,63306.64472,62570.65675
+generators,marginal,RO,onwind,Euro,6593820.591,6419206.336,6367267.876
+generators,marginal,RO,solar,Euro,16995.985741,183711.335403,586231.2527000001
+generators,marginal,RO,solar rooftop,Euro,178639.557964497,371812.09653,424566.70203
+generators,marginal,RS,onwind,Euro,4452749.5035,4394312.5092,4390823.5179
+generators,marginal,RS,solar,Euro,0.135024873,203038.41256000003,251563.25486
+generators,marginal,RS,solar rooftop,Euro,85533.14142,168266.15583,252522.62440000003
+generators,marginal,SE,offwind,Euro,11867.121639,11110.86178,11110.907889
+generators,marginal,SE,offwind-ac,Euro,24198.601405191,229330.11099099598,229307.12370000692
+generators,marginal,SE,offwind-dc,Euro,46786.954432698,234084.29957418801,234083.97744000587
+generators,marginal,SE,onwind,Euro,44807087.447,133934866.864,217700261.77
+generators,marginal,SE,solar,Euro,23784.390827,23784.329457,23784.134488
+generators,marginal,SE,solar rooftop,Euro,76503.50201729599,153007.19193988,233473.75064300362
+generators,marginal,SI,onwind,Euro,104883.5642,103607.3727,103030.388
+generators,marginal,SI,solar,Euro,6908.479752,6532.189146,6514.243899
+generators,marginal,SI,solar rooftop,Euro,0.850049666,23658.48112,47232.55779
+generators,marginal,SK,onwind,Euro,834247.2491,829766.6425,820919.6698
+generators,marginal,SK,solar,Euro,6966.579505,6865.418622,6742.602256
+generators,marginal,SK,solar rooftop,Euro,58132.38444,115762.0457,166900.9132
+lines,capital,,AC,Euro,7104123160.0,10074434273.0,10410490341.0
+links,capital,,DC,Euro,5121695653.0,11514259416.0,12559502812.0
+links,capital,AL,H2 Electrolysis,Euro,4779.89758,26910111.01,65440969.04
+links,capital,AL,Haber-Bosch,Euro,253057.3159,6626398.904,9899611.741
+links,capital,AL,battery charger,Euro,7009689.058,35539154.14,39238152.5
+links,capital,AL,electricity distribution grid,Euro,39414646.7,39415418.96,39414646.7
+links,capital,AL,home battery charger,Euro,4422479.17,4446163.256,4422479.17
+links,capital,AT,CCGT,Euro,409707424.4,0.0,0.0
+links,capital,AT,H2 Fuel Cell,Euro,131.3130661,2236.362567,1.46e-05
+links,capital,AT,Haber-Bosch,Euro,9258139.842,9751729.629,9485314.058
+links,capital,AT,battery charger,Euro,1701.668593,12862113.79,35864528.2
+links,capital,AT,electricity distribution grid,Euro,629801505.7,657221167.3,657221167.3
+links,capital,AT,home battery charger,Euro,41572522.84,55725059.9,61592780.09
+links,capital,BA,H2 Electrolysis,Euro,747.2079608,2585965.163,4148555.455
+links,capital,BA,Haber-Bosch,Euro,4012586.073,4645651.047,5552250.397
+links,capital,BA,battery charger,Euro,7913198.026,25719935.37,48141821.06
+links,capital,BA,electricity distribution grid,Euro,85800047.54,85800478.3,85800047.54
+links,capital,BA,home battery charger,Euro,8855883.942,14616073.23,16896364.31
+links,capital,BE,CCGT,Euro,579103955.9,0.0,0.0
+links,capital,BE,H2 Electrolysis,Euro,225.379055,2955.667482,28005842.37
+links,capital,BE,H2 Fuel Cell,Euro,132.5957711,706830165.0,706830165.0
+links,capital,BE,Haber-Bosch,Euro,20396107.1,237689531.3,329479938.4
+links,capital,BE,battery charger,Euro,15689.28512,1647832.959,7392629.435
+links,capital,BE,electricity distribution grid,Euro,792285910.7,826644234.8,826644234.8
+links,capital,BE,home battery charger,Euro,12787313.0,28643539.55,33050528.15
+links,capital,BG,CCGT,Euro,8219301.531,0.0,0.0
+links,capital,BG,H2 Electrolysis,Euro,3898480.47,198946137.2,268777622.6
+links,capital,BG,Haber-Bosch,Euro,317488.5284,1612041.141,3456007.059
+links,capital,BG,battery charger,Euro,2559921.327,151829289.7,157190570.3
+links,capital,BG,electricity distribution grid,Euro,201222916.0,201222958.4,201222916.0
+links,capital,BG,home battery charger,Euro,26343218.24,26343418.33,26343218.24
+links,capital,BG,nuclear,Euro,1470087043.0,1470087043.0,0.0
+links,capital,CH,CCGT,Euro,5446525.111,0.0,0.0
+links,capital,CH,H2 Electrolysis,Euro,233.6081608,1814.593877,6.32e-05
+links,capital,CH,Haber-Bosch,Euro,1951449.01,4953554.338,6618497.487
+links,capital,CH,battery charger,Euro,4513949.497,4514252.375,24471298.58
+links,capital,CH,electricity distribution grid,Euro,341087811.4,341088029.3,341087811.4
+links,capital,CH,home battery charger,Euro,27830285.92,41241273.07,41241273.07
+links,capital,CH,nuclear,Euro,2099114672.0,2099114672.0,0.0
+links,capital,CH,urban central solid biomass CHP,Euro,29332203.09,29332203.09,18103301.29
+links,capital,CO,CO2 pipeline,Euro,7260.64461,3466.518606,4.27e-05
+links,capital,CZ,CCGT,Euro,63109261.77,0.0,0.0
+links,capital,CZ,H2 Fuel Cell,Euro,143.164956,460285974.1,1169629519.0
+links,capital,CZ,Haber-Bosch,Euro,2497143.556,2698439.298,2848039.408
+links,capital,CZ,OCGT,Euro,200861392.9,0.0,0.0
+links,capital,CZ,battery charger,Euro,4354.823151,14179363.16,30495409.49
+links,capital,CZ,electricity distribution grid,Euro,503109761.6,536773335.1,557475480.5
+links,capital,CZ,home battery charger,Euro,1727072.729,26660947.35,40345707.53
+links,capital,CZ,nuclear,Euro,3032054526.0,3032054526.0,0.0
+links,capital,CZ,urban central solid biomass CHP,Euro,568267709.9,568267709.9,0.0
+links,capital,DE,CCGT,Euro,2667681646.0,0.0,0.0
+links,capital,DE,H2 Electrolysis,Euro,224.7898898,1410.740627,224596467.8
+links,capital,DE,H2 Fuel Cell,Euro,146.1766772,6790487262.0,6790487262.0
+links,capital,DE,Haber-Bosch,Euro,54783533.85,87798685.2,100760189.9
+links,capital,DE,OCGT,Euro,3297444698.0,0.0,0.0
+links,capital,DE,battery charger,Euro,12638089.55,12638994.9,39445775.47
+links,capital,DE,electricity distribution grid,Euro,6066044173.0,6621360918.0,6760150687.0
+links,capital,DE,home battery charger,Euro,66629789.58,211179786.1,319592745.6
+links,capital,DE,nuclear,Euro,990895208.7,0.0,0.0
+links,capital,DE,urban central solid biomass CHP,Euro,2424604485.0,2121455511.0,823476494.4
+links,capital,DK,CCGT,Euro,167871806.7,0.0,0.0
+links,capital,DK,H2 Electrolysis,Euro,267768162.914,745556435.8199999,934889243.2
+links,capital,DK,H2 Fuel Cell,Euro,279.1588218,887025814.21,887025814.21
+links,capital,DK,Haber-Bosch,Euro,119.34231360000001,13831269.279,18914164.974999998
+links,capital,DK,OCGT,Euro,5601.1812709999995,0.0,0.0
+links,capital,DK,battery charger,Euro,21573963.418,23016265.34,23385028.490000002
+links,capital,DK,electricity distribution grid,Euro,394290028.7,427045176.79999995,429020639.5
+links,capital,DK,home battery charger,Euro,22124843.55,25759449.130000003,28075881.98
+links,capital,EE,H2 Electrolysis,Euro,576.9137577,156250260.0,210748109.6
+links,capital,EE,Haber-Bosch,Euro,59.15331554,21455051.84,21455051.84
+links,capital,EE,OCGT,Euro,52590273.02,0.0,0.0
+links,capital,EE,battery charger,Euro,1442238.927,36259422.28,36259422.28
+links,capital,EE,electricity distribution grid,Euro,61896144.03,64382088.31,67295694.05
+links,capital,EE,home battery charger,Euro,5185220.474,6528320.471,7165349.603
+links,capital,ES,CCGT,Euro,2794248231.4,0.0,0.0
+links,capital,ES,H2 Electrolysis,Euro,54265002.938177995,1390174566.23,1806678096.8
+links,capital,ES,Haber-Bosch,Euro,6406498.10402122,219347540.98743275,316471728.0000004
+links,capital,ES,battery charger,Euro,605.833113,758728411.1420001,1032730090.58
+links,capital,ES,electricity distribution grid,Euro,1834054663.64,1834054882.36,1834054663.64
+links,capital,ES,home battery charger,Euro,107133495.66539499,119544411.5357,119463886.57051
+links,capital,ES,nuclear,Euro,2199900447.0,1447965060.0,0.0
+links,capital,FI,CCGT,Euro,136301766.6,0.0,0.0
+links,capital,FI,H2 Electrolysis,Euro,197.9132129,682461050.6,705317122.9
+links,capital,FI,Haber-Bosch,Euro,59.20133071,20606973.27,29787761.79
+links,capital,FI,OCGT,Euro,336178727.3,0.0,0.0
+links,capital,FI,battery charger,Euro,1463.60168,91748931.95,102684907.4
+links,capital,FI,electricity distribution grid,Euro,720699867.3,720700042.7,720699867.3
+links,capital,FI,home battery charger,Euro,11278881.41,16151429.65,16151429.65
+links,capital,FI,nuclear,Euro,2381823719.0,2381823719.0,0.0
+links,capital,FR,CCGT,Euro,724684923.0,0.0,0.0
+links,capital,FR,H2 Electrolysis,Euro,26879946.75,602492488.7,747277667.4
+links,capital,FR,Haber-Bosch,Euro,20725031.37,55569622.86,68737786.2
+links,capital,FR,battery charger,Euro,126728835.5,438121118.5,692139092.6
+links,capital,FR,electricity distribution grid,Euro,4214152301.0,4214152406.0,4214152301.0
+links,capital,FR,home battery charger,Euro,70893419.8,193979469.6,193979469.6
+links,capital,FR,nuclear,Euro,10481437907.0,6749678490.0,0.0
+links,capital,FR,urban central solid biomass CHP,Euro,221648639.7,221648639.7,137538215.9
+links,capital,GB,CCGT,Euro,3233574471.7,0.0,0.0
+links,capital,GB,H2 Electrolysis,Euro,1116075060.7,3159034071.5,3434359976.5
+links,capital,GB,H2 Fuel Cell,Euro,213.36470474,2108.1817023000003,5.07e-06
+links,capital,GB,Haber-Bosch,Euro,16390922.9025,34602743.297,42157912.62899999
+links,capital,GB,battery charger,Euro,36297385.370000005,253270711.79000002,293530346.6
+links,capital,GB,electricity distribution grid,Euro,2694754405.01,2702293200.01,2702290843.01
+links,capital,GB,home battery charger,Euro,141526200.286,216243689.65899998,216243689.65899998
+links,capital,GB,nuclear,Euro,1901218339.0,932939854.1,0.0
+links,capital,GB,urban central solid biomass CHP,Euro,2171018437.01,2146662895.01,1990135392.01
+links,capital,GR,CCGT,Euro,698753752.9,0.0,0.0
+links,capital,GR,H2 Electrolysis,Euro,14723986.51,464218342.3,633517088.6
+links,capital,GR,Haber-Bosch,Euro,2636110.174,64853946.4,99446542.38
+links,capital,GR,battery charger,Euro,4167580.4,75048749.82,91283027.33
+links,capital,GR,electricity distribution grid,Euro,377408004.7,377408062.3,377408004.7
+links,capital,GR,home battery charger,Euro,66085028.1,68041467.49,68041467.49
+links,capital,H2,H2 pipeline,Euro,34190075.4,368324405.1,391258294.2
+links,capital,H2,H2 pipeline retrofitted,Euro,373793048.2,822877998.2,1034878260.0
+links,capital,HR,CCGT,Euro,27331653.28,0.0,0.0
+links,capital,HR,H2 Electrolysis,Euro,319.8549415,10415.28259,47787287.84
+links,capital,HR,Haber-Bosch,Euro,5612885.583,6408953.978,7622209.936
+links,capital,HR,battery charger,Euro,5127.28289,79618153.97,86086166.43
+links,capital,HR,electricity distribution grid,Euro,122128937.8,122129102.6,122128937.8
+links,capital,HR,home battery charger,Euro,9261747.923,17568153.08,20943774.98
+links,capital,HU,CCGT,Euro,278456072.0,0.0,0.0
+links,capital,HU,H2 Electrolysis,Euro,412.2938356,84043336.44,196466689.5
+links,capital,HU,Haber-Bosch,Euro,9703608.632,10797924.73,11501741.79
+links,capital,HU,battery charger,Euro,17348868.93,189422878.0,189422878.0
+links,capital,HU,electricity distribution grid,Euro,351870234.9,400216156.2,402066876.7
+links,capital,HU,home battery charger,Euro,22684371.49,32658140.61,49819286.03
+links,capital,HU,nuclear,Euro,1342090522.0,1342090522.0,0.0
+links,capital,IE,CCGT,Euro,417797989.9,0.0,0.0
+links,capital,IE,H2 Electrolysis,Euro,45565537.45,623269209.3,678894841.7
+links,capital,IE,Haber-Bosch,Euro,66.20667415,6057356.939,8182733.682
+links,capital,IE,battery charger,Euro,8892036.872,8893866.196,8893443.027
+links,capital,IE,electricity distribution grid,Euro,356081481.0,381151638.4,381151638.4
+links,capital,IE,home battery charger,Euro,21855536.54,29320295.93,29320295.93
+links,capital,IT,CCGT,Euro,4756866295.63,0.0,0.0
+links,capital,IT,H2 Electrolysis,Euro,6206576.289,23984868.979999997,429488677.39
+links,capital,IT,H2 Fuel Cell,Euro,182.61856606,72121134.84904851,72120924.26000172
+links,capital,IT,Haber-Bosch,Euro,10281328.847700002,87831472.511,136045556.124
+links,capital,IT,battery charger,Euro,11438069.311488,537942994.6,806294619.1
+links,capital,IT,electricity distribution grid,Euro,2635899921.9,2644334057.6,2644333915.6
+links,capital,IT,home battery charger,Euro,283863140.01,475972945.92,475972945.92
+links,capital,LT,CCGT,Euro,113683833.2,0.0,0.0
+links,capital,LT,H2 Electrolysis,Euro,269.133003,8154205.389,8154205.389
+links,capital,LT,H2 Fuel Cell,Euro,139.4012849,5088.898028,8.1e-05
+links,capital,LT,Haber-Bosch,Euro,16647903.37,22884335.98,27385512.09
+links,capital,LT,OCGT,Euro,1759.284149,0.0,0.0
+links,capital,LT,battery charger,Euro,1340.039755,724.3700639,5.92e-06
+links,capital,LT,electricity distribution grid,Euro,80623885.91,80624404.99,84535235.29
+links,capital,LT,home battery charger,Euro,5053905.932,8010221.001,8392559.865
+links,capital,LU,H2 Fuel Cell,Euro,141.9349382,5037997.148,5037997.148
+links,capital,LU,OCGT,Euro,3817.665715,0.0,0.0
+links,capital,LU,battery charger,Euro,9612563.133,9613157.776,9866604.956
+links,capital,LU,electricity distribution grid,Euro,67452110.27,71989663.17,74195169.16
+links,capital,LU,home battery charger,Euro,1516720.124,1556565.024,1871491.145
+links,capital,LV,CCGT,Euro,107643141.7,0.0,0.0
+links,capital,LV,H2 Electrolysis,Euro,309.868334,1024.086227,6.91e-06
+links,capital,LV,H2 Fuel Cell,Euro,139.0896206,1179.318869,6.87e-06
+links,capital,LV,Haber-Bosch,Euro,59.12225392,5908871.813,9805149.529
+links,capital,LV,OCGT,Euro,1790.403342,0.0,0.0
+links,capital,LV,battery charger,Euro,1342.520965,2637382.137,2637382.137
+links,capital,LV,electricity distribution grid,Euro,76345260.36,82988431.64,91216649.33
+links,capital,LV,home battery charger,Euro,446081.83,4849257.216,6269294.47
+links,capital,ME,H2 Electrolysis,Euro,971698.2013,19642486.82,27650348.95
+links,capital,ME,Haber-Bosch,Euro,193393.939,5021289.682,7953519.993
+links,capital,ME,battery charger,Euro,9655.466476,993111.6369,2047798.208
+links,capital,ME,electricity distribution grid,Euro,28811087.98,28811129.66,28811087.98
+links,capital,ME,home battery charger,Euro,2837994.101,2838158.734,2837994.101
+links,capital,MK,H2 Electrolysis,Euro,1995363.772,2735746.301,2735746.302
+links,capital,MK,Haber-Bosch,Euro,453247.0613,11095065.68,18197857.29
+links,capital,MK,battery charger,Euro,13060827.02,52665286.47,59490656.94
+links,capital,MK,electricity distribution grid,Euro,80355209.67,80355266.13,80355209.67
+links,capital,MK,home battery charger,Euro,1433750.368,1453907.294,1433750.368
+links,capital,NL,CCGT,Euro,1009498575.0,0.0,0.0
+links,capital,NL,H2 Electrolysis,Euro,267.0156101,706440851.4,805773617.1
+links,capital,NL,H2 Fuel Cell,Euro,143.0929282,2803757119.0,2803757119.0
+links,capital,NL,Haber-Bosch,Euro,43972868.04,344077918.8,448537583.9
+links,capital,NL,OCGT,Euro,4651.483077,0.0,0.0
+links,capital,NL,battery charger,Euro,36234848.69,36236057.28,47714993.95
+links,capital,NL,electricity distribution grid,Euro,1188056913.0,1307281912.0,1372064063.0
+links,capital,NL,home battery charger,Euro,42862627.8,69851485.4,87266721.29
+links,capital,NL,nuclear,Euro,342784719.1,342784719.1,0.0
+links,capital,NO,CCGT,Euro,63179691.29,0.0,0.0
+links,capital,NO,H2 Electrolysis,Euro,249.3343133,5796.415303,3.6e-05
+links,capital,NO,Haber-Bosch,Euro,38969416.37,38969499.24,38969416.37
+links,capital,NO,battery charger,Euro,275.9683387,11162457.17,11162457.17
+links,capital,NO,electricity distribution grid,Euro,1119182645.0,1147752186.0,1159961205.0
+links,capital,NO,home battery charger,Euro,27099267.18,44954658.5,49096758.11
+links,capital,PL,CCGT,Euro,409079373.1,0.0,0.0
+links,capital,PL,H2 Electrolysis,Euro,170.181019,615444329.6,921836257.6
+links,capital,PL,H2 Fuel Cell,Euro,146.9000265,422059157.2,422059157.2
+links,capital,PL,Haber-Bosch,Euro,47126456.07,54061534.37,54061534.37
+links,capital,PL,OCGT,Euro,1505703217.0,0.0,0.0
+links,capital,PL,battery charger,Euro,3121.55763,21464866.21,28343271.78
+links,capital,PL,electricity distribution grid,Euro,1091055943.0,1164631508.0,1164631508.0
+links,capital,PL,home battery charger,Euro,29253760.1,88982026.9,123463451.9
+links,capital,PT,CCGT,Euro,412846603.4,0.0,0.0
+links,capital,PT,H2 Electrolysis,Euro,6398237.384,97369555.23,205470135.9
+links,capital,PT,Haber-Bosch,Euro,59.59324889,19294384.35,28672360.23
+links,capital,PT,battery charger,Euro,385.0409525,122749417.9,177596906.6
+links,capital,PT,electricity distribution grid,Euro,401738397.4,401738536.1,401738397.4
+links,capital,PT,home battery charger,Euro,11277612.84,21165853.4,21165853.4
+links,capital,RO,CCGT,Euro,99878385.94,0.0,0.0
+links,capital,RO,H2 Electrolysis,Euro,270360.886,118954164.0,323481259.8
+links,capital,RO,Haber-Bosch,Euro,15430318.04,18118042.68,27120622.36
+links,capital,RO,battery charger,Euro,41533325.95,144058717.4,271880491.8
+links,capital,RO,electricity distribution grid,Euro,357057417.5,378823770.8,399882153.7
+links,capital,RO,home battery charger,Euro,45474620.52,62476717.4,68061271.05
+links,capital,RO,nuclear,Euro,918804401.8,918804401.8,0.0
+links,capital,RS,CCGT,Euro,19805545.86,0.0,0.0
+links,capital,RS,H2 Electrolysis,Euro,1963.792885,75134439.75,118240357.7
+links,capital,RS,Haber-Bosch,Euro,9780883.591,11017734.18,13206877.62
+links,capital,RS,battery charger,Euro,21700844.8,102410052.2,118538979.0
+links,capital,RS,electricity distribution grid,Euro,385660595.9,431394861.2,451952414.1
+links,capital,RS,home battery charger,Euro,25966168.28,38237295.63,47913241.22
+links,capital,SE,CCGT,Euro,135965072.3,0.0,0.0
+links,capital,SE,H2 Electrolysis,Euro,231.21351,65319397.75,273972155.7
+links,capital,SE,Haber-Bosch,Euro,59.361481,69203701.08,118398937.2
+links,capital,SE,OCGT,Euro,3842.036175,0.0,0.0
+links,capital,SE,battery charger,Euro,639.7676679,59429589.32,59429589.32
+links,capital,SE,electricity distribution grid,Euro,1158620050.0,1158620093.0,1158620050.0
+links,capital,SE,home battery charger,Euro,51845984.28,51846095.29,51845984.28
+links,capital,SE,nuclear,Euro,3294267167.0,3294267167.0,0.0
+links,capital,SI,CCGT,Euro,42978034.51,0.0,0.0
+links,capital,SI,H2 Fuel Cell,Euro,117.0176107,1867.691628,8.43e-06
+links,capital,SI,Haber-Bosch,Euro,59.28359267,2320143.547,3329029.222
+links,capital,SI,battery charger,Euro,2719.22082,23664620.87,23664620.87
+links,capital,SI,electricity distribution grid,Euro,106950319.0,106950410.7,106950319.0
+links,capital,SI,home battery charger,Euro,2867767.013,4337689.157,4337689.157
+links,capital,SI,nuclear,Euro,491913741.3,491913741.3,0.0
+links,capital,SK,CCGT,Euro,97128984.53,0.0,0.0
+links,capital,SK,H2 Electrolysis,Euro,311.2366729,2971.829603,1171154.668
+links,capital,SK,H2 Fuel Cell,Euro,141.0908384,1249.017197,74670176.18
+links,capital,SK,Haber-Bosch,Euro,8785934.323,8786347.791,8785934.323
+links,capital,SK,OCGT,Euro,4005.537316,0.0,0.0
+links,capital,SK,battery charger,Euro,21744874.04,51683579.99,67581368.28
+links,capital,SK,electricity distribution grid,Euro,196422027.3,204562290.6,204848556.9
+links,capital,SK,home battery charger,Euro,10535358.6,18603152.67,23882144.34
+links,capital,SK,nuclear,Euro,1371138877.0,1371138877.0,0.0
+links,capital,ga,gas pipeline,Euro,100359324.9,98932111.45,102522223.8
+links,capital,ga,gas pipeline new,Euro,4721194.15,4721155.206,4720792.317
+links,marginal,AT,CCGT,Euro,113726489.7,0.0,0.0
+links,marginal,BE,CCGT,Euro,158024114.8,0.0,0.0
+links,marginal,BG,CCGT,Euro,2328778.026,0.0,0.0
+links,marginal,BG,nuclear,Euro,62179191.24,58540527.26,0.0
+links,marginal,CH,CCGT,Euro,1589290.365,0.0,0.0
+links,marginal,CH,nuclear,Euro,89910559.6,86165131.19,0.0
+links,marginal,CH,urban central solid biomass CHP,Euro,1835457.226,8282603.646,2796717.105
+links,marginal,CZ,CCGT,Euro,16495812.05,0.0,0.0
+links,marginal,CZ,OCGT,Euro,1641286.818,0.0,0.0
+links,marginal,CZ,nuclear,Euro,130476533.5,127391221.4,0.0
+links,marginal,CZ,urban central solid biomass CHP,Euro,33562328.85,170680235.3,0.0
+links,marginal,DE,CCGT,Euro,753152996.3,0.0,0.0
+links,marginal,DE,OCGT,Euro,27673551.65,0.0,0.0
+links,marginal,DE,nuclear,Euro,42431348.15,0.0,0.0
+links,marginal,DE,urban central solid biomass CHP,Euro,144827070.1,640167174.9,127929319.0
+links,marginal,DK,CCGT,Euro,47365455.120000005,0.0,0.0
+links,marginal,EE,OCGT,Euro,1179901.903,0.0,0.0
+links,marginal,ES,CCGT,Euro,683927247.6099999,0.0,0.0
+links,marginal,ES,nuclear,Euro,91971771.33,59056465.67,0.0
+links,marginal,FI,CCGT,Euro,49998160.68,0.0,0.0
+links,marginal,FI,OCGT,Euro,6840108.48,0.0,0.0
+links,marginal,FI,nuclear,Euro,103282911.8,92468136.11,0.0
+links,marginal,FR,CCGT,Euro,190402157.5,0.0,0.0
+links,marginal,FR,nuclear,Euro,441754312.5,275590877.7,0.0
+links,marginal,FR,urban central solid biomass CHP,Euro,9910198.133,61464884.57,19991387.06
+links,marginal,GB,CCGT,Euro,777360057.19,0.0,0.0
+links,marginal,GB,nuclear,Euro,75616565.25,37377637.13,0.0
+links,marginal,GB,urban central solid biomass CHP,Euro,89387546.58839999,603406350.07,240398584.267
+links,marginal,GR,CCGT,Euro,194693174.4,0.0,0.0
+links,marginal,HR,CCGT,Euro,8036891.487,0.0,0.0
+links,marginal,HU,CCGT,Euro,80435427.06,0.0,0.0
+links,marginal,HU,nuclear,Euro,57125163.84,54489877.6,0.0
+links,marginal,IE,CCGT,Euro,98364739.31,0.0,0.0
+links,marginal,IT,CCGT,Euro,1130863335.46,0.0,0.0
+links,marginal,LT,CCGT,Euro,37751359.82,0.0,0.0
+links,marginal,LV,CCGT,Euro,35834259.91,0.0,0.0
+links,marginal,NL,CCGT,Euro,253889438.9,0.0,0.0
+links,marginal,NL,nuclear,Euro,14431692.67,13860055.72,0.0
+links,marginal,NO,CCGT,Euro,23443967.08,0.0,0.0
+links,marginal,PL,CCGT,Euro,136270938.8,0.0,0.0
+links,marginal,PL,OCGT,Euro,24953327.11,0.0,0.0
+links,marginal,PT,CCGT,Euro,101813297.7,0.0,0.0
+links,marginal,RO,CCGT,Euro,29332283.97,0.0,0.0
+links,marginal,RO,nuclear,Euro,39063773.09,36624082.12,0.0
+links,marginal,RS,CCGT,Euro,5862215.876,0.0,0.0
+links,marginal,SE,CCGT,Euro,48337095.31,0.0,0.0
+links,marginal,SE,nuclear,Euro,142848182.1,131462440.2,0.0
+links,marginal,SI,CCGT,Euro,9584245.484,0.0,0.0
+links,marginal,SI,nuclear,Euro,21036886.01,20133491.02,0.0
+links,marginal,SK,CCGT,Euro,26872265.48,0.0,0.0
+links,marginal,SK,nuclear,Euro,58807954.43,56555250.73,0.0
+storage_units,capital,AL,hydro,Euro,264900550.1,264900550.1,264900550.1
+storage_units,capital,AT,PHS,Euro,894582476.2,894582476.2,894582476.2
+storage_units,capital,AT,hydro,Euro,607694666.2,607694666.2,607694666.2
+storage_units,capital,BA,PHS,Euro,78031895.31,78031895.31,78031895.31
+storage_units,capital,BA,hydro,Euro,300688814.8,300688814.8,300688814.8
+storage_units,capital,BE,PHS,Euro,231967543.3,231967543.3,231967543.3
+storage_units,capital,BE,hydro,Euro,2266968.887,2266968.887,2266968.887
+storage_units,capital,BG,PHS,Euro,153226267.2,153226267.2,153226267.2
+storage_units,capital,BG,hydro,Euro,361702663.1,361702663.1,361702663.1
+storage_units,capital,CH,PHS,Euro,883312187.7,883312187.7,883312187.7
+storage_units,capital,CH,hydro,Euro,1628380232.0,1628380232.0,1628380232.0
+storage_units,capital,CZ,PHS,Euro,204833725.2,204833725.2,204833725.2
+storage_units,capital,CZ,hydro,Euro,121478618.5,121478618.5,121478618.5
+storage_units,capital,DE,PHS,Euro,1358396968.0,1358396968.0,1358396968.0
+storage_units,capital,DE,hydro,Euro,30060014.22,30060014.22,30060014.22
+storage_units,capital,ES,PHS,Euro,1500088702.0,1500088702.0,1500088702.0
+storage_units,capital,ES,hydro,Euro,2699443722.0,2699443722.0,2699443722.0
+storage_units,capital,FI,hydro,Euro,245942346.4,245942346.4,245942346.4
+storage_units,capital,FR,PHS,Euro,882523001.5,882523001.5,882523001.5
+storage_units,capital,FR,hydro,Euro,1429500042.0,1429500042.0,1429500042.0
+storage_units,capital,GB,PHS,Euro,78031895.31,78031895.31,78031895.31
+storage_units,capital,GB,hydro,Euro,24526843.46,24526843.46,24526843.46
+storage_units,capital,GR,PHS,Euro,123964306.4,123964306.4,123964306.4
+storage_units,capital,GR,hydro,Euro,455067825.8,455067825.8,455067825.8
+storage_units,capital,HR,PHS,Euro,91988963.86,91988963.86,91988963.86
+storage_units,capital,HR,hydro,Euro,235447847.2,235447847.2,235447847.2
+storage_units,capital,HU,hydro,Euro,4965666.065,4965666.065,4965666.065
+storage_units,capital,IE,PHS,Euro,69519324.91,69519324.91,69519324.91
+storage_units,capital,IE,hydro,Euro,177345.2166,177345.2166,177345.2166
+storage_units,capital,IT,PHS,Euro,1343726971.99,1343726971.99,1343726971.99
+storage_units,capital,IT,hydro,Euro,732588577.78,732588577.78,732588577.78
+storage_units,capital,LT,PHS,Euro,159610695.0,159610695.0,159610695.0
+storage_units,capital,LU,PHS,Euro,457905349.3,457905349.3,457905349.3
+storage_units,capital,ME,hydro,Euro,64369397.17,64369397.17,64369397.17
+storage_units,capital,NO,PHS,Euro,50064554.65,50064554.65,50064554.65
+storage_units,capital,NO,hydro,Euro,5092233835.0,5092233835.0,5092233835.0
+storage_units,capital,PL,PHS,Euro,302550939.6,302550939.6,302550939.6
+storage_units,capital,PL,hydro,Euro,41162163.65,41162163.65,41162163.65
+storage_units,capital,PT,PHS,Euro,468546062.3,468546062.3,468546062.3
+storage_units,capital,PT,hydro,Euro,269635667.3,269635667.3,269635667.3
+storage_units,capital,RO,hydro,Euro,999673727.2,999673727.2,999673727.2
+storage_units,capital,RS,PHS,Euro,108889963.0,108889963.0,108889963.0
+storage_units,capital,RS,hydro,Euro,140120455.7,140120455.7,140120455.7
+storage_units,capital,SE,PHS,Euro,16315759.93,16315759.93,16315759.93
+storage_units,capital,SE,hydro,Euro,2107166018.0,2107166018.0,2107166018.0
+storage_units,capital,SI,PHS,Euro,31922138.99,31922138.99,31922138.99
+storage_units,capital,SI,hydro,Euro,20926735.56,20926735.56,20926735.56
+storage_units,capital,SK,PHS,Euro,145858105.4,145858105.4,145858105.4
+storage_units,capital,SK,hydro,Euro,42899807.9,42899807.9,42899807.9
+stores,capital,AL,ammonia store,Euro,70303.33419,3495840.401,5851645.286
+stores,capital,AL,battery,Euro,11212557.38,119984926.6,119984926.6
+stores,capital,AL,biomass,Euro,54943761.15,196209462.7,272319380.4
+stores,capital,AL,gas,Euro,57590780.52,200472481.1,274548327.6
+stores,capital,AL,home battery,Euro,12993299.21,13567587.51,13567587.51
+stores,capital,AT,ammonia store,Euro,2211503.035,4813422.674,4813422.674
+stores,capital,AT,battery,Euro,2763.444851,38815875.12,108133118.9
+stores,capital,AT,biomass,Euro,54943764.07,196209462.8,272319379.7
+stores,capital,AT,gas,Euro,57693737.91,199706761.3,274598456.0
+stores,capital,AT,home battery,Euro,66661484.95,88949922.7,98178006.82
+stores,capital,BA,ammonia store,Euro,392391.3414,2143115.351,3132212.31
+stores,capital,BA,battery,Euro,12657742.92,107925528.1,196784536.9
+stores,capital,BA,biomass,Euro,54943764.61,196209464.3,272319382.4
+stores,capital,BA,gas,Euro,57591131.03,200469177.6,274550966.2
+stores,capital,BA,home battery,Euro,20164085.1,36930957.4,44872961.29
+stores,capital,BE,ammonia store,Euro,5723485.743,111398288.7,149276808.9
+stores,capital,BE,battery,Euro,25128.66026,7459327.245,22845641.24
+stores,capital,BE,biomass,Euro,54943801.89,196209464.0,272319380.2
+stores,capital,BE,gas,Euro,57850776.03,199713126.3,274608405.7
+stores,capital,BE,home battery,Euro,20504440.39,45475994.14,52406787.46
+stores,capital,BG,ammonia store,Euro,88121.31732,1076760.926,2675601.556
+stores,capital,BG,battery,Euro,4094785.329,594596985.6,594596985.6
+stores,capital,BG,biomass,Euro,54943751.91,196209464.7,272319380.2
+stores,capital,BG,gas,Euro,57729080.26,199984745.0,274622958.9
+stores,capital,BG,home battery,Euro,66594681.64,66594826.43,75738915.53
+stores,capital,CH,ammonia store,Euro,465944.1876,2778978.233,3349448.531
+stores,capital,CH,battery,Euro,7220392.093,12554225.7,72694329.79
+stores,capital,CH,biomass,Euro,57295582.29,198345025.8,274906015.0
+stores,capital,CH,gas,Euro,57706246.39,199527241.6,274583161.9
+stores,capital,CH,home battery,Euro,44625823.84,67595930.83,67595930.83
+stores,capital,CZ,ammonia store,Euro,651706.5598,1279622.082,1434847.577
+stores,capital,CZ,battery,Euro,13324.7167,44574010.03,112676909.4
+stores,capital,CZ,biomass,Euro,57295563.57,198344988.5,272319379.7
+stores,capital,CZ,gas,Euro,57702038.43,199618534.7,274596005.7
+stores,capital,CZ,home battery,Euro,2769363.91,50048890.83,73358854.6
+stores,capital,DE,H2 Store,Euro,298.2504668,1544418304.0,1679298178.0
+stores,capital,DE,ammonia store,Euro,17229522.98,42882464.72,52965335.29
+stores,capital,DE,battery,Euro,38813801.89,38826640.17,119598227.8
+stores,capital,DE,biomass,Euro,57295585.09,198344916.6,274906025.4
+stores,capital,DE,gas,Euro,57670155.92,199371162.1,274667073.1
+stores,capital,DE,home battery,Euro,106840772.5,334488526.2,504988197.1
+stores,capital,DK,H2 Store,Euro,7036329.369,364332187.28000003,471910983.3
+stores,capital,DK,ammonia store,Euro,99.46827253000001,7101403.367,8763662.785
+stores,capital,DK,battery,Euro,36670639.09,125194673.05000001,125194673.05000001
+stores,capital,DK,biomass,Euro,109887602.05000001,392418926.79999995,544638762.1
+stores,capital,DK,gas,Euro,115451953.83,398332464.1,549164433.1
+stores,capital,DK,home battery,Euro,35734242.43,42579467.68,47330778.019999996
+stores,capital,EE,ammonia store,Euro,49.70623499,3358400.531,6215067.561
+stores,capital,EE,battery,Euro,2306975.864,217712047.1,217712047.1
+stores,capital,EE,biomass,Euro,54943752.34,196209464.1,272319380.3
+stores,capital,EE,gas,Euro,57516271.16,201022401.6,274545698.6
+stores,capital,EE,home battery,Euro,10793763.89,12210082.31,13651713.98
+stores,capital,ES,H2 Store,Euro,399627.08416181,260971758.4825735,289402651.1000008
+stores,capital,ES,ammonia store,Euro,1939740.73229992,112508991.36959617,141066641.50000048
+stores,capital,ES,battery,Euro,968.4219824,2323875670.57,3123124766.85
+stores,capital,ES,biomass,Euro,109887602.03999999,392418928.5,544638759.3
+stores,capital,ES,gas,Euro,115297332.12,398905936.20000005,549229454.4000001
+stores,capital,ES,home battery,Euro,171788426.474713,191333850.66320002,199191923.16320002
+stores,capital,EU,coal,Euro,54943748.95,196209465.9,272319380.5
+stores,capital,EU,lignite,Euro,54943761.1,196209465.7,272319380.4
+stores,capital,EU,oil,Euro,54943800.99,196209463.8,272319380.4
+stores,capital,EU,uranium,Euro,57298733.96,198346706.6,272319381.6
+stores,capital,FI,ammonia store,Euro,49.74802445,2145478.423,4955287.22
+stores,capital,FI,battery,Euro,2343.212573,787520021.0,787520021.0
+stores,capital,FI,biomass,Euro,54943801.85,196209465.8,272319379.7
+stores,capital,FI,gas,Euro,57662205.24,200235557.4,274580269.3
+stores,capital,FI,home battery,Euro,30155936.78,49705189.03,49705189.03
+stores,capital,FR,ammonia store,Euro,5468151.129,27388801.06,32940318.19
+stores,capital,FR,battery,Euro,202712140.0,1292252793.0,2057656463.0
+stores,capital,FR,biomass,Euro,57295635.26,198345013.3,274906003.9
+stores,capital,FR,gas,Euro,57759650.25,199495013.0,274569373.8
+stores,capital,FR,home battery,Euro,113677499.7,307522281.5,307522281.5
+stores,capital,GB,H2 Store,Euro,17097747.094,1243715546.3,1367319461.7
+stores,capital,GB,ammonia store,Euro,5939743.0555,17831406.576899998,17926207.784199998
+stores,capital,GB,battery,Euro,58060312.95999999,1872151906.6,1872151906.6
+stores,capital,GB,biomass,Euro,114591196.46000001,396689958.6,549812005.6
+stores,capital,GB,gas,Euro,115641988.42,400422911.29999995,549189507.6
+stores,capital,GB,home battery,Euro,267503346.148,435424024.68899995,435424024.68899995
+stores,capital,GR,H2 Store,Euro,122956.6038,83732442.0,223198623.3
+stores,capital,GR,ammonia store,Euro,757798.6326,35406392.05,62003564.54
+stores,capital,GR,battery,Euro,6666348.617,232886475.3,276281624.0
+stores,capital,GR,biomass,Euro,54943752.21,196209465.1,272319380.0
+stores,capital,GR,gas,Euro,57412749.48,199659003.9,274535406.2
+stores,capital,GR,home battery,Euro,165467326.6,165467480.3,165467326.6
+stores,capital,HR,ammonia store,Euro,818042.8685,2965215.061,4229209.387
+stores,capital,HR,battery,Euro,8231.81263,360411639.6,360411639.6
+stores,capital,HR,biomass,Euro,54943764.28,196209465.8,272319380.4
+stores,capital,HR,gas,Euro,57652389.37,200314288.7,274560330.9
+stores,capital,HR,home battery,Euro,23609422.65,42376598.84,49477947.79
+stores,capital,HU,ammonia store,Euro,1393570.221,6022567.623,6134792.179
+stores,capital,HU,battery,Euro,27750790.18,848570248.7,848570248.7
+stores,capital,HU,biomass,Euro,54943752.18,196209463.6,272319379.6
+stores,capital,HU,gas,Euro,57691567.24,199695451.2,274557455.2
+stores,capital,HU,home battery,Euro,36374358.74,55284235.49,130769439.7
+stores,capital,IE,ammonia store,Euro,49.7045471,2412175.937,3973546.999
+stores,capital,IE,battery,Euro,14223460.58,60824074.33,60824074.33
+stores,capital,IE,biomass,Euro,54943801.6,196209465.8,272319380.4
+stores,capital,IE,gas,Euro,57868312.29,199618913.7,274607547.0
+stores,capital,IE,home battery,Euro,35045322.25,53042341.79,53042341.79
+stores,capital,IT,ammonia store,Euro,1281288.9490999999,44842116.449,75960265.434
+stores,capital,IT,battery,Euro,18296027.239455,1837796931.1,2662509286.8
+stores,capital,IT,biomass,Euro,109887523.32,392418931.3,544638760.5
+stores,capital,IT,gas,Euro,115232696.24,399616162.2,549155119.9
+stores,capital,IT,home battery,Euro,455174390.79,937354216.98,937354216.98
+stores,capital,LT,ammonia store,Euro,881274.6663,11188891.38,12192566.39
+stores,capital,LT,battery,Euro,2145.612812,3284.52839,2.66e-05
+stores,capital,LT,biomass,Euro,54943801.7,196209463.7,272319383.7
+stores,capital,LT,gas,Euro,57700211.63,199958941.2,274596212.9
+stores,capital,LT,home battery,Euro,8103928.063,16169360.3,17651612.67
+stores,capital,LU,battery,Euro,29521364.8,30510364.17,30510364.17
+stores,capital,LU,biomass,Euro,54943751.87,196209464.8,272319382.3
+stores,capital,LU,gas,Euro,57700334.71,199547706.3,274568859.1
+stores,capital,LU,home battery,Euro,2432064.347,2494812.847,2990004.535
+stores,capital,LV,ammonia store,Euro,49.69559848,3057317.537,4594760.351
+stores,capital,LV,battery,Euro,2149.168604,11938766.04,11938791.59
+stores,capital,LV,biomass,Euro,54943800.4,196209465.8,272319378.5
+stores,capital,LV,gas,Euro,57731923.15,199896100.9,274580189.2
+stores,capital,LV,home battery,Euro,715423.8783,12766955.77,15297394.98
+stores,capital,ME,ammonia store,Euro,51117.13854,2794489.105,5099045.478
+stores,capital,ME,battery,Euro,16938.51899,2997309.456,6175386.544
+stores,capital,ME,biomass,Euro,54943754.05,196209464.8,272319379.6
+stores,capital,ME,gas,Euro,57590921.33,200469954.9,274550232.2
+stores,capital,ME,home battery,Euro,8244467.74,8244622.01,8244467.74
+stores,capital,MK,ammonia store,Euro,115841.6522,6087364.836,11398398.9
+stores,capital,MK,battery,Euro,20891741.87,179285436.6,181698206.7
+stores,capital,MK,biomass,Euro,54943748.92,196209465.3,272319379.6
+stores,capital,MK,gas,Euro,57591045.06,200472529.6,274546203.8
+stores,capital,MK,home battery,Euro,2436788.516,2436936.988,3683019.005
+stores,capital,NL,H2 Store,Euro,553.1482208,425939028.7,533342772.1
+stores,capital,NL,ammonia store,Euro,13629348.59,158812663.8,205702842.2
+stores,capital,NL,battery,Euro,111277537.8,155955609.1,155955609.1
+stores,capital,NL,biomass,Euro,54943802.06,196209464.5,272319380.1
+stores,capital,NL,gas,Euro,57711967.95,199347664.3,274632421.2
+stores,capital,NL,home battery,Euro,68730162.37,111234161.0,138622879.0
+stores,capital,NO,ammonia store,Euro,3345287.719,19166453.57,19166453.57
+stores,capital,NO,battery,Euro,441.1923398,50529850.28,50529850.28
+stores,capital,NO,biomass,Euro,54943801.6,196209462.1,272319379.5
+stores,capital,NO,gas,Euro,57855921.81,200613961.9,274664985.6
+stores,capital,NO,home battery,Euro,43453636.0,93352701.75,115808220.2
+stores,capital,PL,H2 Store,Euro,279.5909497,212237369.0,447154573.6
+stores,capital,PL,ammonia store,Euro,9486928.015,24067694.4,26141311.06
+stores,capital,PL,battery,Euro,9405.425267,97166341.36,128258223.3
+stores,capital,PL,biomass,Euro,54943754.76,196209463.8,272319384.4
+stores,capital,PL,gas,Euro,57699421.24,199960244.2,274600228.2
+stores,capital,PL,home battery,Euro,46908362.83,165967957.2,225249067.8
+stores,capital,PT,H2 Store,Euro,105220.0555,19369474.53,40093313.86
+stores,capital,PT,ammonia store,Euro,49.84625581,9335818.796,13100946.29
+stores,capital,PT,battery,Euro,616.0260575,426221640.3,548304285.9
+stores,capital,PT,biomass,Euro,54943751.39,196209464.2,272319378.5
+stores,capital,PT,gas,Euro,57786586.05,199309115.4,274584316.7
+stores,capital,PT,home battery,Euro,18083636.36,46298975.92,46298975.92
+stores,capital,RO,ammonia store,Euro,1854396.425,10878652.11,18494447.93
+stores,capital,RO,battery,Euro,66435583.92,592912165.2,1060452907.0
+stores,capital,RO,biomass,Euro,54943755.39,196209465.7,272319379.7
+stores,capital,RO,gas,Euro,57764561.87,200023026.0,274596926.2
+stores,capital,RO,home battery,Euro,107223176.5,138015914.6,141519208.0
+stores,capital,RS,ammonia store,Euro,1160812.969,6275147.256,6627632.536
+stores,capital,RS,battery,Euro,34712194.42,452450458.4,508288538.9
+stores,capital,RS,biomass,Euro,54943752.57,196209464.1,272319380.6
+stores,capital,RS,gas,Euro,57741547.0,200269530.7,274546079.1
+stores,capital,RS,home battery,Euro,54526980.1,77655924.79,103887931.2
+stores,capital,SE,ammonia store,Euro,49.7661976,32997484.0,53064682.26
+stores,capital,SE,battery,Euro,1024.046739,269023621.5,269023621.5
+stores,capital,SE,biomass,Euro,54943749.08,196209464.6,272319384.3
+stores,capital,SE,gas,Euro,57661993.91,200236554.7,274579180.0
+stores,capital,SE,home battery,Euro,83134962.01,83135186.73,83134962.01
+stores,capital,SI,ammonia store,Euro,49.80879554,1225257.448,2069958.479
+stores,capital,SI,battery,Euro,4385.722112,107123956.7,107123956.7
+stores,capital,SI,biomass,Euro,54943752.4,196209466.0,272319379.5
+stores,capital,SI,gas,Euro,57466775.99,200808400.3,274526725.2
+stores,capital,SI,home battery,Euro,4798802.824,6951890.354,6951890.354
+stores,capital,SK,ammonia store,Euro,1759590.922,4784994.172,4784994.172
+stores,capital,SK,battery,Euro,66782061.51,229113003.0,300974623.1
+stores,capital,SK,biomass,Euro,54943748.53,196209463.4,272319382.3
+stores,capital,SK,gas,Euro,57679460.56,199463584.9,274589407.0
+stores,capital,SK,home battery,Euro,16893433.5,34437113.27,47967142.68
