@@ -12,6 +12,10 @@ SPDX-License-Identifier: CC-BY-4.0
 [![Snakemake](https://img.shields.io/badge/snakemake-≥5.0.0-brightgreen.svg?style=flat)](https://snakemake.readthedocs.io)
 [![REUSE status](https://api.reuse.software/badge/github.com/pypsa/pypsa-eur)](https://api.reuse.software/info/github.com/pypsa/pypsa-eur)
 
+# PAC 2.0 Project for CAN Europe
+
+The PAC 2.0 project is an ambitious project aiming at exploring the implications of a PAC (Paris accord compatible) scenario with 100% renewable energy sources (RES) by 2040 at the EU(+TYNDP) level. It involves a large increase of interconnection between countries and a strict policy against the expansion of fossil fuel capacity, with coal slated for phase-out by 2030 and gas/oil by 2035. Additionally, it relies on an ambitious energy demand reduction scenario, supported by a comprehensive energy demand modeling tool called the Pathways Explorer, for improved sector coupling.
+
 # [Fork] PyPSA-Eur: A Sector-Coupled Open Optimisation Model of the European Energy System
 
 Original repository : [https://github.com/PyPSA/pypsa-eur](https://github.com/PyPSA/pypsa-eur)
