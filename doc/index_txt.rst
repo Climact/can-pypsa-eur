@@ -41,9 +41,9 @@ the features from PyPSA-Eur-Sec, which is now deprecated.
 PAC scenario modelling 2.0 for CAN Europe
 =============================
 
-This version of PyPSA-Eur is an extended version designed by Climact for the *Climate Action Network Europe* (CAN Europe) in the context of the *PAC scenario modelling 2.0* (see :ref:`PAC scenario modelling 2.0 for CAN Europe<Overview>` for further details).
+This version of PyPSA-Eur is an extended version designed by Climact for the *Climate Action Network Europe* (CAN Europe) in the context of the *PAC scenario modelling 2.0* (see :ref:`PAC scenario modelling 2.0 for CAN Europe<can_overview>` for further details).
 
-.. seealso:: Detailed chapter about modifications made by Climact : :ref:`PAC scenario modelling 2.0 for CAN Europe<Overview>`
+.. seealso:: Detailed chapter about modifications made by Climact : :ref:`PAC scenario modelling 2.0 for CAN Europe<can_overview>`
 
 Electricity System
 ==================
